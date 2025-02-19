@@ -1,47 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HireHub - Home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style/all.css">
-    <link rel="stylesheet" href="./style/all.min.css.css">
-    <link rel="stylesheet" href="./style/bootstrap.min.css">
-    <link rel="stylesheet" href="./style/main.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/all.css" />
+    <link rel="stylesheet" href="./style/all.min.css.css" />
+    <link rel="stylesheet" href="./style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
   <body>
     <div class="page d-flex">
-      <div class="sidebar bg-white">
+      <div class="sidebar bg-white z-3">
         <h3 class="text-center position-relative">Hire<span>Hub</span></h3>
         <ul class="list-unstyled">
           <li>
-            <a href="" class="active d-flex align-items-center text-decoration-none text-dark">
+            <a
+              href=""
+              class="active d-flex align-items-center text-decoration-none text-dark"
+            >
               <!-- <i class="fa-solid fa-border-all fa-fw"></i> -->
               <span>All</span>
             </a>
           </li>
           <li>
-            <a href="" class="d-flex align-items-center text-decoration-none text-dark"><span>Engineering</span></a>
+            <a
+              href=""
+              class="d-flex align-items-center text-decoration-none text-dark"
+              ><span>Engineering</span></a
+            >
           </li>
           <li>
-            <a href="" class="d-flex align-items-center text-decoration-none text-dark"><span>Medicine</span></a>
+            <a
+              href=""
+              class="d-flex align-items-center text-decoration-none text-dark"
+              ><span>Medicine</span></a
+            >
           </li>
           <li>
-            <a href="" class="d-flex align-items-center text-decoration-none text-dark"><span>Law</span></a>
+            <a
+              href=""
+              class="d-flex align-items-center text-decoration-none text-dark"
+              ><span>Law</span></a
+            >
           </li>
           <li>
-            <a href="" class="d-flex align-items-center text-decoration-none text-dark"><span>Media</span></a>
+            <a
+              href=""
+              class="d-flex align-items-center text-decoration-none text-dark"
+              ><span>Media</span></a
+            >
           </li>
           <li>
-            <a href="" class="d-flex align-items-center text-decoration-none text-dark"><span>Pharmacy</span></a>
+            <a
+              href=""
+              class="d-flex align-items-center text-decoration-none text-dark"
+              ><span>Pharmacy</span></a
+            >
           </li>
         </ul>
       </div>
-      <div class="content">
-        Content
+      <div class="content w-100">
+        <nav class="navbar bg-white d-flex">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-dark" type="submit">Search</button>
+          </form>
+          <div
+            class="icons d-flex justify-content-between align-items-center gap-3"
+          >
+            <span class="notification-page position-relative">
+              <a href="" class="notifications-page text-black">
+                <i class="fa-regular fa-bell fa-fw"></i>
+              </a>
+            </span>
+            <span class="profile-page">
+              <a href="" class="text-black">
+                <i class="fa-solid fa-user fa-fw"></i>
+              </a>
+            </span>
+          </div>
+        </nav>
+        <div
+          class="cards p-4 d-flex align-items-center justify-content-between flex-wrap"
+        >
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+                <div class="col-md-8 d-none description 111">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >Last updated 3 mins ago</small
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="min-width: 230px; height: 300px">
+            <div class="row g-0 h-100">
+              <div
+                class="col-md-4 h-100 w-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-regular fa-file fa-2"></i>
+              </div>
+              <div class="col-md-8 d-none">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./js/main.js"></script>
