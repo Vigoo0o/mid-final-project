@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+.icons i {
+  color: white;
+  font-size: 24px;
+  margin-left: 15px;
+  cursor: pointer;/* لجعل الأيقونات تبدو قابلة للنقر */
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.profile {
+  display: flex;
+  margin-top: 20px;
+}
+
+.left, .right {
+  flex: 1;
+}
+
+.left {
+  padding: 20px;
+  background-color: #fff;
+  margin-right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.left .cv {
+  font-size: 40px;
+  font-weight:bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; 
+  border: 2px solid #333;
+  background-color: #f0f0f0; 
+  margin-bottom: 20px;
+}
+.right {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #555;
+}
