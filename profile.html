@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HireHub - Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/all.css" />
+    <link rel="stylesheet" href="./style/all.min.css" />
+    <link rel="stylesheet" href="./style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/profile.css" />
+  </head>
+  <body>
+    <div class="page">
+      <nav
+        class="d-flex justify-content-between align-items-center w-100 bg-white position-relative"
+      >
+        <div class="greet-user">
+          <span class="fw-bold"
+            >Welcome, <span class="username">Username</span></span
+          >
+        </div>
+        <div class="links">
+          <span class="notification-page position-relative">
+            <a href="" class="notifications-page text-black">
+              <i class="fa-regular fa-bell fa-fw"></i>
+            </a>
+          </span>
+        </div>
+      </nav>
+      <div class="content w-100 d-flex">
+        <div
+          class="left-side bg-white d-flex justify-content-evenly align-items-center"
+        >
+          <div class="cv d-flex justify-content-center align-items-center">
+            <span>CV</span>
+          </div>
+          <div class="languages align-self-start">
+            <h4>Languages:</h4>
+            <ul>
+              <li>Arabic</li>
+              <li>English</li>
+              <li>Spansh</li>
+            </ul>
+          </div>
+          <div class="skills align-self-start">
+            <h4>Skills:</h4>
+            <ul>
+              <li>Git & Github</li>
+              <li>C++</li>
+              <li>Python</li>
+            </ul>
+          </div>
+        </div>
+        <div class="right-side w-100 position-relative">
+          <form class="row g-3 position-absolute bg-white">
+            <div class="col-6">
+              <label for="inputFullName" class="form-label">Full Name</label>
+              <input
+                id="inputFullName"
+                type="text"
+                class="form-control"
+                placeholder="Curent name"
+                aria-label="Full Name"
+              />
+            </div>
+            <div class="col-6">
+              <label for="inputNickname" class="form-label">Nick Name</label>
+              <input
+                id="inputNickname"
+                type="text"
+                class="form-control"
+                placeholder="Curent Nick name"
+                aria-label="Nick Name"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail4"
+                placeholder="example@email.com"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="inputCountry" class="form-label">Country</label>
+              <input
+                type="email"
+                class="form-control"
+                id="inputCountry"
+                placeholder="Egypt"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

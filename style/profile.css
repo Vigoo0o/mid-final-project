@@ -1,0 +1,68 @@
+nav {
+  padding: 15px;
+  height: fit-content;
+  box-shadow: 0px 0px 10px #ddd;
+}
+
+nav .greet-user > span {
+  font-size: 25px;
+}
+
+nav .greet-user > span > span {
+}
+
+nav .links .notification-page a {
+  padding: 10px;
+}
+
+nav .links .notification-page a i {
+  font-size: 17px;
+}
+
+nav .links .notification-page::after {
+  content: "";
+  position: absolute;
+  background-color: #f44336;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: 25px;
+  top: -4px;
+}
+
+.page .content {
+  height: calc(100vh - 67.5px);
+}
+
+.page .content .left-side {
+  width: 350px;
+  height: 100%;
+  box-shadow: 0px 10px 10px #ddd;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.page .content .left-side .cv {
+  margin: 20px 0;
+  width: 200px;
+  height: 250px;
+  background-color: #6c757d;
+  font-size: 100px;
+}
+
+.page .content .right-side form {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  width: 900px;
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
