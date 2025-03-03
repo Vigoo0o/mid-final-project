@@ -1,0 +1,81 @@
+:root {
+  --main-transition: 0.3s;
+}
+
+body {
+  background-color: #f1f5f9;
+}
+
+.container {
+  margin-top: 70px;
+}
+
+.container .tabs {
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.container .tabs span {
+  position: relative;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.container .tabs span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(50%);
+  height: 3px;
+  background-color: black;
+  transition: var(--main-transition);
+}
+
+.container .tabs span:hover::before {
+  width: 100%;
+}
+
+.container .notifications .notification {
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.container .notifications .notification:not(:last-child) {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.container .notifications .notification .image {
+  padding: 10px;
+  border: 1.9px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.container .notifications .notification .image,
+.container .notifications .notification .image i {
+  transition: var(--main-transition);
+}
+
+.container .notifications .notification:hover .image {
+  border-color: #03a9f4;
+}
+.container .notifications .notification:hover .image i {
+  color: #03a9f4;
+}
+
+.container .notifications .notification:hover .name {
+  color: #03a9f4;
+}
+
+.container .notifications .notification:hover {
+  border-color: #a7a7a7;
+}
+
+.container .notifications .notification:hover .content {
+  color: #777;
+}
