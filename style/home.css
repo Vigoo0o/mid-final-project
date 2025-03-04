@@ -3,6 +3,13 @@
   font-size: 20px;
 }
 
+@media (max-width: 768px) {
+  .page .sidebar h3 {
+    font-size: 11px;
+    font-weight: bold;
+  }
+}
+
 .page .sidebar h3::before,
 .page .sidebar h3::after {
   content: "";
@@ -10,6 +17,13 @@
   left: 50%;
   background-color: black;
   transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .page .sidebar h3::before,
+  .page .sidebar h3::after {
+    display: none;
+  }
 }
 
 .page .sidebar h3::before {
@@ -39,6 +53,12 @@
   margin-left: 10px;
 }
 
+@media (max-width: 768px) {
+  .page .sidebar ul li {
+    display: none;
+  }
+}
+
 .page .sidebar ul li a.active,
 .page .sidebar ul li a:hover {
   background-color: #f6f6f6;
@@ -66,6 +86,10 @@
 .card-face {
   width: 100%;
   font-size: 100px;
+}
+
+.content .cards {
+  gap: 20px;
 }
 
 .content .cards .card:hover .description {
