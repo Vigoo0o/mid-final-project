@@ -83,15 +83,16 @@
   top: -1px;
 }
 
-.card-face {
+/* .card-face {
   width: 100%;
   font-size: 100px;
-}
+}*/
 
 .content .cards {
   gap: 20px;
 }
 
+/*
 .content .cards .card:hover .description {
   top: 0;
   left: 0;
@@ -103,4 +104,83 @@
   display: flex !important;
   justify-content: center;
   align-items: center;
+} */
+
+/*Csrds*/
+
+.card {
+  position: relative;
+  width: 250px;
+  top: -21px;
+  padding: 10px;
+  border-radius: 50%;
+  height: 300px;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card .description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #dee2e6;
+  border-radius: 0 0 5px 5px;
+  height: 100px;
+  width: 100%;
+  padding-top: 30px;
+  bottom: -123px;
+  transition: 0.3s;
+}
+
+.card:hover .description {
+  bottom: 0;
+}
+
+.card .description .image {
+  position: absolute;
+  top: -21px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  left: 10px;
+  background-color: #dee2e6;
+}
+
+.card .description .info {
+  position: absolute;
+  /* left: 20px; */
+  /* bottom: 25px; */
+  width: 100%;
+  text-align: center;
+}
+
+.card .description .info .jop-name {
+}
+
+.card .description .info .jop-name,
+.card .description .info .rate .times {
+  font-size: 14px;
+}
+
+.card .description .info .jop-name > span {
+}
+
+.card .description .info .jop-name span:last-child {
+}
+
+.card .description .info .rate {
+}
+
+.card .description .info .rate .icons {
+}
+
+.card .description .info .rate .times {
+}
+
+.card:hover .description {
+  display: block;
 }
