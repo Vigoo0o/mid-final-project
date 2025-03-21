@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WorkNest - Home</title>
+    <!-- Lato & Sarabun Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style/all.css" />
@@ -15,1056 +16,353 @@
     <link rel="stylesheet" href="./style/bootstrap.min.css" />
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./style/home.css" />
+    <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <div class="page d-flex">
-      <div class="sidebar bg-white z-3">
-        <img src="./images/Untitled_Project-removebg-preview.png" alt="" />
-        <h3 class="text-center position-relative">Hire<span>Hub</span></h3>
-        <ul class="list-unstyled">
-          <li>
-            <a
-              href=""
-              class="active d-flex align-items-center text-decoration-none text-dark"
-            >
-              <!-- <i class="fa-solid fa-border-all fa-fw"></i> -->
-              <span>All</span>
+    <nav>
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <div class="logo">
+            <a href="">
+              <img src="./images/logo1.png" width="100" alt="logo" />
             </a>
-          </li>
-          <li>
-            <a
-              href=""
-              class="d-flex align-items-center text-decoration-none text-dark"
-              ><span>Engineering</span></a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="d-flex align-items-center text-decoration-none text-dark"
-              ><span>Medicine</span></a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="d-flex align-items-center text-decoration-none text-dark"
-              ><span>Law</span></a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="d-flex align-items-center text-decoration-none text-dark"
-              ><span>Media</span></a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="d-flex align-items-center text-decoration-none text-dark"
-              ><span>Pharmacy</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="./Test/test.html"
-              class="d-flex align-items-center text-decoration-none text-dark"
-              ><span>Test Page</span></a
-            >
-          </li>
-        </ul>
-        <div
-          class="icons d-none justify-content-between align-items-center gap-3"
-        >
-          <span class="notification-page position-relative">
-            <a
-              href="./notifications.html"
-              class="notifications-page text-black"
-            >
-              <i class="fa-regular fa-bell fa-fw"></i>
-            </a>
-          </span>
-          <span class="profile-page">
-            <a href="./profile.html" class="text-black">
-              <i class="fa-solid fa-user fa-fw"></i>
-            </a>
-          </span>
+          </div>
+          <ul class="links list-unstyled d-flex m-0">
+            <li><a class="active" href="">Home</a></li>
+            <li><a href="">All Jobs</a></li>
+            <li><a href="">Companies</a></li>
+            <li><a href="">All CVs</a></li>
+            <li><a href="">Career Advices</a></li>
+          </ul>
         </div>
-        <div class="icon d-none">
-          <i class="fa-solid fa-arrow-right"></i>
-        </div>
-        <div class="switch">
-          <a class="active" href="">CVs</a>
-          <a href="">Jobs</a>
+        <div class="icons d-flex align-items-center justify-content-between">
+          <a class="notification-icon" href="">
+            <i class="fa-regular fa-bell"></i>
+          </a>
+          <a
+            class="profile-icon d-flex justify-content-between align-items-center"
+            href=""
+          >
+            <img
+              class="profile-image"
+              src="./images/profile-image.png"
+              alt=""
+            />
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
         </div>
       </div>
-      <div class="content w-100">
-        <nav class="navbar bg-white d-flex">
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              name="search-filed"
-            />
-            <button class="btn btn-dark" type="submit">Search</button>
-          </form>
-          <div
-            class="icons d-flex justify-content-between align-items-center gap-3"
-          >
-            <span class="notification-page position-relative">
-              <a
-                href="./notifications.html"
-                class="notifications-page text-black"
-              >
-                <i class="fa-regular fa-bell fa-fw"></i>
-              </a>
-            </span>
-            <span class="profile-page">
-              <a href="./profile.html" class="text-black">
-                <i class="fa-solid fa-user fa-fw"></i>
-              </a>
-            </span>
+    </nav>
+    <div class="landing">
+      <div
+        class="container h-100 d-flex justify-content-between align-items-center"
+      >
+        <div class="info">
+          <h1><span class="numberOfJobs">16,780 Jobs</span> For You</h1>
+          <p>
+            Non enim eu excepteur cupidatat consectetur do ea est reprehenderit
+            incididunt irure veniam cupidatat est non amet. Enim duis aute
+            tempor laboris ipsum dolore non.
+          </p>
+          <a class="btn btn-primary" href="">Explore now</a>
+        </div>
+        <div class="shape">
+          <img class="person1" src="./images/shapeImage1.png" alt="" />
+          <img class="person2" src="./images/shapeImage2.png" alt="" />
+          <img class="statistic2" src="./images/shapeImage3.png" alt="" />
+          <img class="statistic1" src="./images/shapeImage4.png" alt="" />
+          <img class="locationIcon" src="./images/shapeImage5.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="jobExplore">
+      <div class="container">
+        <div class="headTitel">
+          Explore More
+          <div class="primaryWord"> jobs</div>
+        </div>
+        <form class="jobSearchForm text-center" action="">
+          <input class="border-0" type="search" name="jobSearch" id="" />
+          <button class="border-0" type="button">Search</button>
+        </form>
+        <div class="categoresSlider d-flex justify-content-center align-items-center">
+          <div class="categore" style="background-color: #edfdfd;">
+            <div class="icon d-flex justify-content-center align-items-center"></div>
+            <div class="categoreName">IT</div>
+            <span><span class="countOfJobs">5768</span> jobs</span>
           </div>
-        </nav>
-        <div
-          class="cards p-4 d-flex align-items-center justify-content-evenly flex-wrap"
-        >
-          <div class="card">
-            <div class="cv">CV</div>
-            <div class="description">
-              <div class="image">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 194.2 249.7"
-                  style="enable-background: new 0 0 194.2 249.7"
-                  xml:space="preserve"
-                  width="20"
-                  height="20"
-                >
-                  <style>
-                    .st4,
-                    .st7 {
-                      fill: #fff;
-                      stroke: #0561fc;
-                      stroke-width: 10.0091;
-                    }
-                    .st7 {
-                      fill: none;
-                    }
-                  </style>
-                  <g id="Layer_4">
-                    <path
-                      d="M5.1 249.7v-9c0-28.4 22.9-51.3 51.2-51.3H130c28.3 0 51.2 23 51.2 51.3v9"
-                      style="
-                        fill: #c5e1f9;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                      "
-                    />
-                    <path
-                      class="st4"
-                      d="M93.2 225.6c-12.7 0-22.9-10.3-22.9-23V79.7c0-12.7 10.3-23 22.9-23 12.7 0 22.9 10.3 22.9 23v122.9c0 12.7-10.3 23-22.9 23z"
-                    />
-                    <path
-                      d="M189.2 85.3c0-15.4-10.1-28.5-24.1-33.5.5-1.7.8-3.5.8-5.3 0-11.2-9.3-20.2-20.7-20.2h-.5C131.6 13.2 113.5 5 93.5 5 58.3 5 28.9 30.4 22.6 63.9 12 70.2 5 81.4 5 94.3c0 11.4 5.5 21.5 14.1 28-1.5 3.3-2.4 6.9-2.4 10.7 0 16.2 15.5 29.3 34.6 29.3s34.6-13.1 34.6-29.3c0-1.5-.2-2.9-.4-4.3h50.8c1 10.8 10 19.2 21 19.2 11.7 0 21.1-9.5 21.1-21.2 0-4.8-1.6-9.2-4.3-12.7 9.2-6.4 15.1-16.8 15.1-28.7z"
-                      style="
-                        fill: #9ac7f7;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                      "
-                    />
-                    <path
-                      d="M157.6 82.9v35.3c0 31.4-28.7 56.8-64.1 56.8-35.4 0-64.1-25.4-64.1-56.8V79.9l28-15.4 10.8-17.9 5.7-11.1 6.7 11.1 27.6 23.9 27.6 7.8 21.7 2"
-                      style="fill: #fff"
-                    />
-                    <path
-                      class="st4"
-                      d="M153.1 83.4c2.1-.8 4.4-1.2 6.7-1.2 10.8 0 19.5 8.8 19.5 19.6s-8.8 19.6-19.5 19.6M33.1 121.4c-10.8 0-19.5-8.8-19.5-19.6s8.7-19.6 19.5-19.6"
-                    />
-                    <path
-                      class="st7"
-                      d="M157.6 81v29.8c0 35.5-28.7 64.3-64.1 64.3-35.4 0-64.1-28.8-64.1-64.3V81"
-                    />
-                    <path
-                      class="st7"
-                      d="M76.7 146.5c12.9 5.2 26.8 4 38.2-2.1"
-                    />
-                    <path
-                      d="M158.1 82.5c-27.6 1.6-61.2-7.4-74.3-35.9l-9-19.6c-2.9 21-15.5 40.6-35.6 51.1-4.2 2.2-7.4 3.7-12.3 5.4"
-                      style="
-                        fill: none;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                        stroke-linejoin: bevel;
-                      "
-                    />
-                    <path
-                      class="st7"
-                      d="M74.6 98.5H62.9M121.4 98.5h-11.7M102 124.2H89.5V91.8"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <div class="info">
-                <div class="jop-name">
-                  <span class="spasific">Enginnering: </span>
-                  <span class="jop-name">Software Engineer</span>
-                </div>
-                <div class="rate">
-                  <span class="icons">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                  </span>
-                  <span class="times">(200)</span>
-                </div>
-              </div>
-              <div class="rate"></div>
-            </div>
+          <div class="categore" style="background-color: #fef6f1;">
+            <div class="icon"></div>
+            <div class="categoreName">IT</div>
+            <span><span class="countOfJobs">5768</span> jobs</span>
           </div>
-          <div class="card">
-            <div class="cv">CV</div>
-            <div class="description">
-              <div class="image">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 194.2 249.7"
-                  style="enable-background: new 0 0 194.2 249.7"
-                  xml:space="preserve"
-                  width="20"
-                  height="20"
-                >
-                  <style>
-                    .st4,
-                    .st7 {
-                      fill: #fff;
-                      stroke: #0561fc;
-                      stroke-width: 10.0091;
-                    }
-                    .st7 {
-                      fill: none;
-                    }
-                  </style>
-                  <g id="Layer_4">
-                    <path
-                      d="M5.1 249.7v-9c0-28.4 22.9-51.3 51.2-51.3H130c28.3 0 51.2 23 51.2 51.3v9"
-                      style="
-                        fill: #c5e1f9;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                      "
-                    />
-                    <path
-                      class="st4"
-                      d="M93.2 225.6c-12.7 0-22.9-10.3-22.9-23V79.7c0-12.7 10.3-23 22.9-23 12.7 0 22.9 10.3 22.9 23v122.9c0 12.7-10.3 23-22.9 23z"
-                    />
-                    <path
-                      d="M189.2 85.3c0-15.4-10.1-28.5-24.1-33.5.5-1.7.8-3.5.8-5.3 0-11.2-9.3-20.2-20.7-20.2h-.5C131.6 13.2 113.5 5 93.5 5 58.3 5 28.9 30.4 22.6 63.9 12 70.2 5 81.4 5 94.3c0 11.4 5.5 21.5 14.1 28-1.5 3.3-2.4 6.9-2.4 10.7 0 16.2 15.5 29.3 34.6 29.3s34.6-13.1 34.6-29.3c0-1.5-.2-2.9-.4-4.3h50.8c1 10.8 10 19.2 21 19.2 11.7 0 21.1-9.5 21.1-21.2 0-4.8-1.6-9.2-4.3-12.7 9.2-6.4 15.1-16.8 15.1-28.7z"
-                      style="
-                        fill: #9ac7f7;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                      "
-                    />
-                    <path
-                      d="M157.6 82.9v35.3c0 31.4-28.7 56.8-64.1 56.8-35.4 0-64.1-25.4-64.1-56.8V79.9l28-15.4 10.8-17.9 5.7-11.1 6.7 11.1 27.6 23.9 27.6 7.8 21.7 2"
-                      style="fill: #fff"
-                    />
-                    <path
-                      class="st4"
-                      d="M153.1 83.4c2.1-.8 4.4-1.2 6.7-1.2 10.8 0 19.5 8.8 19.5 19.6s-8.8 19.6-19.5 19.6M33.1 121.4c-10.8 0-19.5-8.8-19.5-19.6s8.7-19.6 19.5-19.6"
-                    />
-                    <path
-                      class="st7"
-                      d="M157.6 81v29.8c0 35.5-28.7 64.3-64.1 64.3-35.4 0-64.1-28.8-64.1-64.3V81"
-                    />
-                    <path
-                      class="st7"
-                      d="M76.7 146.5c12.9 5.2 26.8 4 38.2-2.1"
-                    />
-                    <path
-                      d="M158.1 82.5c-27.6 1.6-61.2-7.4-74.3-35.9l-9-19.6c-2.9 21-15.5 40.6-35.6 51.1-4.2 2.2-7.4 3.7-12.3 5.4"
-                      style="
-                        fill: none;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                        stroke-linejoin: bevel;
-                      "
-                    />
-                    <path
-                      class="st7"
-                      d="M74.6 98.5H62.9M121.4 98.5h-11.7M102 124.2H89.5V91.8"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <div class="info">
-                <div class="jop-name">
-                  <span class="spasific">Enginnering: </span>
-                  <span class="jop-name">Software Engineer</span>
-                </div>
-                <div class="rate">
-                  <span class="icons">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                  </span>
-                  <span class="times">(200)</span>
-                </div>
-              </div>
-              <div class="rate"></div>
-            </div>
+          <div class="categore" style="background-color: #f6f1fd;">
+            <div class="icon"></div>
+            <div class="categoreName">IT</div>
+            <span><span class="countOfJobs">5768</span> jobs</span>
           </div>
-          <div class="card">
-            <div class="cv">CV</div>
-            <div class="description">
-              <div class="image">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 194.2 249.7"
-                  style="enable-background: new 0 0 194.2 249.7"
-                  xml:space="preserve"
-                  width="20"
-                  height="20"
-                >
-                  <style>
-                    .st4,
-                    .st7 {
-                      fill: #fff;
-                      stroke: #0561fc;
-                      stroke-width: 10.0091;
-                    }
-                    .st7 {
-                      fill: none;
-                    }
-                  </style>
-                  <g id="Layer_4">
-                    <path
-                      d="M5.1 249.7v-9c0-28.4 22.9-51.3 51.2-51.3H130c28.3 0 51.2 23 51.2 51.3v9"
-                      style="
-                        fill: #c5e1f9;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                      "
-                    />
-                    <path
-                      class="st4"
-                      d="M93.2 225.6c-12.7 0-22.9-10.3-22.9-23V79.7c0-12.7 10.3-23 22.9-23 12.7 0 22.9 10.3 22.9 23v122.9c0 12.7-10.3 23-22.9 23z"
-                    />
-                    <path
-                      d="M189.2 85.3c0-15.4-10.1-28.5-24.1-33.5.5-1.7.8-3.5.8-5.3 0-11.2-9.3-20.2-20.7-20.2h-.5C131.6 13.2 113.5 5 93.5 5 58.3 5 28.9 30.4 22.6 63.9 12 70.2 5 81.4 5 94.3c0 11.4 5.5 21.5 14.1 28-1.5 3.3-2.4 6.9-2.4 10.7 0 16.2 15.5 29.3 34.6 29.3s34.6-13.1 34.6-29.3c0-1.5-.2-2.9-.4-4.3h50.8c1 10.8 10 19.2 21 19.2 11.7 0 21.1-9.5 21.1-21.2 0-4.8-1.6-9.2-4.3-12.7 9.2-6.4 15.1-16.8 15.1-28.7z"
-                      style="
-                        fill: #9ac7f7;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                      "
-                    />
-                    <path
-                      d="M157.6 82.9v35.3c0 31.4-28.7 56.8-64.1 56.8-35.4 0-64.1-25.4-64.1-56.8V79.9l28-15.4 10.8-17.9 5.7-11.1 6.7 11.1 27.6 23.9 27.6 7.8 21.7 2"
-                      style="fill: #fff"
-                    />
-                    <path
-                      class="st4"
-                      d="M153.1 83.4c2.1-.8 4.4-1.2 6.7-1.2 10.8 0 19.5 8.8 19.5 19.6s-8.8 19.6-19.5 19.6M33.1 121.4c-10.8 0-19.5-8.8-19.5-19.6s8.7-19.6 19.5-19.6"
-                    />
-                    <path
-                      class="st7"
-                      d="M157.6 81v29.8c0 35.5-28.7 64.3-64.1 64.3-35.4 0-64.1-28.8-64.1-64.3V81"
-                    />
-                    <path
-                      class="st7"
-                      d="M76.7 146.5c12.9 5.2 26.8 4 38.2-2.1"
-                    />
-                    <path
-                      d="M158.1 82.5c-27.6 1.6-61.2-7.4-74.3-35.9l-9-19.6c-2.9 21-15.5 40.6-35.6 51.1-4.2 2.2-7.4 3.7-12.3 5.4"
-                      style="
-                        fill: none;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                        stroke-linejoin: bevel;
-                      "
-                    />
-                    <path
-                      class="st7"
-                      d="M74.6 98.5H62.9M121.4 98.5h-11.7M102 124.2H89.5V91.8"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <div class="info">
-                <div class="jop-name">
-                  <span class="spasific">Enginnering: </span>
-                  <span class="jop-name">Software Engineer</span>
-                </div>
-                <div class="rate">
-                  <span class="icons">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                  </span>
-                  <span class="times">(200)</span>
-                </div>
-              </div>
-              <div class="rate"></div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="cv">CV</div>
-            <div class="description">
-              <div class="image">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 194.2 249.7"
-                  style="enable-background: new 0 0 194.2 249.7"
-                  xml:space="preserve"
-                  width="20"
-                  height="20"
-                >
-                  <style>
-                    .st4,
-                    .st7 {
-                      fill: #fff;
-                      stroke: #0561fc;
-                      stroke-width: 10.0091;
-                    }
-                    .st7 {
-                      fill: none;
-                    }
-                  </style>
-                  <g id="Layer_4">
-                    <path
-                      d="M5.1 249.7v-9c0-28.4 22.9-51.3 51.2-51.3H130c28.3 0 51.2 23 51.2 51.3v9"
-                      style="
-                        fill: #c5e1f9;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                      "
-                    />
-                    <path
-                      class="st4"
-                      d="M93.2 225.6c-12.7 0-22.9-10.3-22.9-23V79.7c0-12.7 10.3-23 22.9-23 12.7 0 22.9 10.3 22.9 23v122.9c0 12.7-10.3 23-22.9 23z"
-                    />
-                    <path
-                      d="M189.2 85.3c0-15.4-10.1-28.5-24.1-33.5.5-1.7.8-3.5.8-5.3 0-11.2-9.3-20.2-20.7-20.2h-.5C131.6 13.2 113.5 5 93.5 5 58.3 5 28.9 30.4 22.6 63.9 12 70.2 5 81.4 5 94.3c0 11.4 5.5 21.5 14.1 28-1.5 3.3-2.4 6.9-2.4 10.7 0 16.2 15.5 29.3 34.6 29.3s34.6-13.1 34.6-29.3c0-1.5-.2-2.9-.4-4.3h50.8c1 10.8 10 19.2 21 19.2 11.7 0 21.1-9.5 21.1-21.2 0-4.8-1.6-9.2-4.3-12.7 9.2-6.4 15.1-16.8 15.1-28.7z"
-                      style="
-                        fill: #9ac7f7;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                      "
-                    />
-                    <path
-                      d="M157.6 82.9v35.3c0 31.4-28.7 56.8-64.1 56.8-35.4 0-64.1-25.4-64.1-56.8V79.9l28-15.4 10.8-17.9 5.7-11.1 6.7 11.1 27.6 23.9 27.6 7.8 21.7 2"
-                      style="fill: #fff"
-                    />
-                    <path
-                      class="st4"
-                      d="M153.1 83.4c2.1-.8 4.4-1.2 6.7-1.2 10.8 0 19.5 8.8 19.5 19.6s-8.8 19.6-19.5 19.6M33.1 121.4c-10.8 0-19.5-8.8-19.5-19.6s8.7-19.6 19.5-19.6"
-                    />
-                    <path
-                      class="st7"
-                      d="M157.6 81v29.8c0 35.5-28.7 64.3-64.1 64.3-35.4 0-64.1-28.8-64.1-64.3V81"
-                    />
-                    <path
-                      class="st7"
-                      d="M76.7 146.5c12.9 5.2 26.8 4 38.2-2.1"
-                    />
-                    <path
-                      d="M158.1 82.5c-27.6 1.6-61.2-7.4-74.3-35.9l-9-19.6c-2.9 21-15.5 40.6-35.6 51.1-4.2 2.2-7.4 3.7-12.3 5.4"
-                      style="
-                        fill: none;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                        stroke-linejoin: bevel;
-                      "
-                    />
-                    <path
-                      class="st7"
-                      d="M74.6 98.5H62.9M121.4 98.5h-11.7M102 124.2H89.5V91.8"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <div class="info">
-                <div class="jop-name">
-                  <span class="spasific">Enginnering: </span>
-                  <span class="jop-name">Software Engineer</span>
-                </div>
-                <div class="rate">
-                  <span class="icons">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                  </span>
-                  <span class="times">(200)</span>
-                </div>
-              </div>
-              <div class="rate"></div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="cv">CV</div>
-            <div class="description">
-              <div class="image">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 194.2 249.7"
-                  style="enable-background: new 0 0 194.2 249.7"
-                  xml:space="preserve"
-                  width="20"
-                  height="20"
-                >
-                  <style>
-                    .st4,
-                    .st7 {
-                      fill: #fff;
-                      stroke: #0561fc;
-                      stroke-width: 10.0091;
-                    }
-                    .st7 {
-                      fill: none;
-                    }
-                  </style>
-                  <g id="Layer_4">
-                    <path
-                      d="M5.1 249.7v-9c0-28.4 22.9-51.3 51.2-51.3H130c28.3 0 51.2 23 51.2 51.3v9"
-                      style="
-                        fill: #c5e1f9;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                      "
-                    />
-                    <path
-                      class="st4"
-                      d="M93.2 225.6c-12.7 0-22.9-10.3-22.9-23V79.7c0-12.7 10.3-23 22.9-23 12.7 0 22.9 10.3 22.9 23v122.9c0 12.7-10.3 23-22.9 23z"
-                    />
-                    <path
-                      d="M189.2 85.3c0-15.4-10.1-28.5-24.1-33.5.5-1.7.8-3.5.8-5.3 0-11.2-9.3-20.2-20.7-20.2h-.5C131.6 13.2 113.5 5 93.5 5 58.3 5 28.9 30.4 22.6 63.9 12 70.2 5 81.4 5 94.3c0 11.4 5.5 21.5 14.1 28-1.5 3.3-2.4 6.9-2.4 10.7 0 16.2 15.5 29.3 34.6 29.3s34.6-13.1 34.6-29.3c0-1.5-.2-2.9-.4-4.3h50.8c1 10.8 10 19.2 21 19.2 11.7 0 21.1-9.5 21.1-21.2 0-4.8-1.6-9.2-4.3-12.7 9.2-6.4 15.1-16.8 15.1-28.7z"
-                      style="
-                        fill: #9ac7f7;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                      "
-                    />
-                    <path
-                      d="M157.6 82.9v35.3c0 31.4-28.7 56.8-64.1 56.8-35.4 0-64.1-25.4-64.1-56.8V79.9l28-15.4 10.8-17.9 5.7-11.1 6.7 11.1 27.6 23.9 27.6 7.8 21.7 2"
-                      style="fill: #fff"
-                    />
-                    <path
-                      class="st4"
-                      d="M153.1 83.4c2.1-.8 4.4-1.2 6.7-1.2 10.8 0 19.5 8.8 19.5 19.6s-8.8 19.6-19.5 19.6M33.1 121.4c-10.8 0-19.5-8.8-19.5-19.6s8.7-19.6 19.5-19.6"
-                    />
-                    <path
-                      class="st7"
-                      d="M157.6 81v29.8c0 35.5-28.7 64.3-64.1 64.3-35.4 0-64.1-28.8-64.1-64.3V81"
-                    />
-                    <path
-                      class="st7"
-                      d="M76.7 146.5c12.9 5.2 26.8 4 38.2-2.1"
-                    />
-                    <path
-                      d="M158.1 82.5c-27.6 1.6-61.2-7.4-74.3-35.9l-9-19.6c-2.9 21-15.5 40.6-35.6 51.1-4.2 2.2-7.4 3.7-12.3 5.4"
-                      style="
-                        fill: none;
-                        stroke: #0561fc;
-                        stroke-width: 10.0091;
-                        stroke-linejoin: bevel;
-                      "
-                    />
-                    <path
-                      class="st7"
-                      d="M74.6 98.5H62.9M121.4 98.5h-11.7M102 124.2H89.5V91.8"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <div class="info">
-                <div class="jop-name">
-                  <span class="spasific">Enginnering: </span>
-                  <span class="jop-name">Software Engineer</span>
-                </div>
-                <div class="rate">
-                  <span class="icons">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      width="20"
-                      height="20"
-                      style="
-                        shape-rendering: geometricPrecision;
-                        text-rendering: geometricPrecision;
-                        image-rendering: optimizeQuality;
-                        fill-rule: evenodd;
-                        clip-rule: evenodd;
-                      "
-                      viewBox="0 0 6.827 6.827"
-                    >
-                      <path
-                        style="fill: #ff8f00; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"
-                      />
-                      <path
-                        style="fill: #e68100; fill-rule: nonzero"
-                        d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"
-                      />
-                      <path style="fill: none" d="M0 0h6.827v6.827H0z" />
-                    </svg>
-                  </span>
-                  <span class="times">(200)</span>
-                </div>
-              </div>
-              <div class="rate"></div>
-            </div>
+          <div class="categore" style="background-color: #fdf1fd;">
+            <div class="icon"></div>
+            <div class="categoreName">IT</div>
+            <span><span class="countOfJobs">5768</span> jobs</span>
           </div>
         </div>
       </div>
     </div>
+    <div class="latestJobs">
+      <div class="container">
+        <div class="headTitel">
+          <div class="primaryWord">Latest Jobs</div>
+          <p>Exercitation dolore reprehender it fugi</p>
+        </div>
+        <div class="jobs">
+          <div class="job">
+            <div class="head">
+              <div class="image"></div>
+              <div class="jobDetails">
+                <div class="jobTitle">UI / UX Designer</div>
+                <div class="jobSalaryExpected">$95K - $120K</div>
+              </div>
+              <div class="tag"><span>Hot</span></div>
+            </div>
+            <div class="body">
+              <div class="details">
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Laborum</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Tucson, Az</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Onsite</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="job">
+            <div class="head">
+              <div class="image"></div>
+              <div class="jobDetails">
+                <div class="jobTitle">UI / UX Designer</div>
+                <div class="jobSalaryExpected">$95K - $120K</div>
+              </div>
+              <div class="tag"><span>Hot</span></div>
+            </div>
+            <div class="body">
+              <div class="details">
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Laborum</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Tucson, Az</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Onsite</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="job">
+            <div class="head">
+              <div class="image"></div>
+              <div class="jobDetails">
+                <div class="jobTitle">UI / UX Designer</div>
+                <div class="jobSalaryExpected">$95K - $120K</div>
+              </div>
+              <div class="tag"><span>Hot</span></div>
+            </div>
+            <div class="body">
+              <div class="details">
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Laborum</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Tucson, Az</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Onsite</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="job">
+            <div class="head">
+              <div class="image"></div>
+              <div class="jobDetails">
+                <div class="jobTitle">UI / UX Designer</div>
+                <div class="jobSalaryExpected">$95K - $120K</div>
+              </div>
+              <div class="tag"><span>Hot</span></div>
+            </div>
+            <div class="body">
+              <div class="details">
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Laborum</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Tucson, Az</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Onsite</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="job">
+            <div class="head">
+              <div class="image"></div>
+              <div class="jobDetails">
+                <div class="jobTitle">UI / UX Designer</div>
+                <div class="jobSalaryExpected">$95K - $120K</div>
+              </div>
+              <div class="tag"><span>Hot</span></div>
+            </div>
+            <div class="body">
+              <div class="details">
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Laborum</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Tucson, Az</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Onsite</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="job">
+            <div class="head">
+              <div class="image"></div>
+              <div class="jobDetails">
+                <div class="jobTitle">UI / UX Designer</div>
+                <div class="jobSalaryExpected">$95K - $120K</div>
+              </div>
+              <div class="tag"><span>Hot</span></div>
+            </div>
+            <div class="body">
+              <div class="details">
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Laborum</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Tucson, Az</span>
+                </div>
+                <div class="detail">
+                  <div class="icon">I</div>
+                  <span>Onsite</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary">See More</button>
+    </div>
+    <div class="cvs">
+      <div class="container">
+        <div class="headTitel">
+          <div class="primaryWord">CVs</div>
+          <p>Exercitation dolore reprehender it fugi</p>
+        </div>
+        <div class="content">
+          <div class="cv">
+            <div class="image">
+            </div>
+            <div class="info">
+              <div class="profile">
+                Profile: <span class="name">Vigo</span>
+              </div>
+              <div class="jogTitle">
+                Job Title: <span class="title">Software Engnnering</span>
+              </div>
+              <div class="ex">
+                Experience: <span>5 years in IT</span>
+              </div>
+              <div class="readIn">15 mins read</div>
+            </div>
+          </div>
+          <div class="cv">
+            <div class="image">
+            </div>
+            <div class="info">
+              <div class="profile">
+                Profile: <span class="name">Vigo</span>
+              </div>
+              <div class="jogTitle">
+                Job Title: <span class="title">Software Engnnering</span>
+              </div>
+              <div class="ex">
+                Experience: <span>5 years in IT</span>
+              </div>
+              <div class="readIn">15 mins read</div>
+            </div>
+          </div>
+          <div class="cv">
+            <div class="image">
+            </div>
+            <div class="info">
+              <div class="profile">
+                Profile: <span class="name">Vigo</span>
+              </div>
+              <div class="jogTitle">
+                Job Title: <span class="title">Software Engnnering</span>
+              </div>
+              <div class="ex">
+                Experience: <span>5 years in IT</span>
+              </div>
+              <div class="readIn">15 mins read</div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary">See More</button>
+
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div>
+          <div class="logo"></div>
+          <div class="changeLanguage"></div>
+        </div>
+        <div class="links">
+          <ul>
+            <h2>Product</h2>
+            <li>All Jobs</li>
+            <li>Companies</li>
+            <li>Candidates</li>
+          </ul>
+          <ul>
+            <h2>Resources</h2>
+            <li>Blog</li>
+            <li>User guides</li>
+            <li>Webinars</li>
+          </ul>
+          <ul>
+            <h2>Company</h2>
+            <li>About</li>
+            <li>Join us</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <script src="./js/main.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
   </body>
