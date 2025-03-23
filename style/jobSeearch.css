@@ -5,10 +5,6 @@ body {
   background-color: #ffffff;
 }
 
-.logo img {
-  width: 100px;
-  height: auto;
-}
 /* ======== قسم البحث والفلاتر ======== */
 .search-filters {
   padding: 40px 60px;

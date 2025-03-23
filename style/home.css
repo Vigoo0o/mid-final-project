@@ -266,7 +266,6 @@ ul {
 
 .cvs .content .cv {
   padding: 10px 0px;
-  /* background-color: #eee; */
   border-radius: 5px;
   position: relative;
   border: 1px solid #eee;
@@ -275,7 +274,6 @@ ul {
 .cvs .content .cv .image {
   width: 100%;
   height: 200px;
-  /* background-color: #ddd; */
   border-radius: 5px;
   margin-bottom: 10px;
   overflow: hidden;
@@ -302,68 +300,4 @@ ul {
   border-radius: 5px;
   top: 15px;
   right: 18px;
-}
-
-footer {
-  background-color: #161b1f;
-  color: White;
-  height: 400px;
-  width: 100%;
-  padding: 40px 50px;
-}
-
-footer .cols .col {
-  height: 300px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  text-align: end;
-  color: white;
-}
-
-footer .cols .col h3 {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--main-color);
-  text-align: start;
-}
-
-footer .cols .col ul {
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  list-style: none;
-  text-align: end;
-  padding: 0;
-  margin: 0;
-  width: 130px;
-}
-
-footer .cols .col li {
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin-bottom: 7px;
-}
-
-footer .cols .newsletter {
-  justify-content: start;
-}
-
-footer .cols .logo img {
-  width: 300px;
-}
-
-footer .cols .logo .languages {
-}
-
-footer .cols .languages select {
-  padding: 7px 11px;
-  border: none;
-  border-radius: 4px;
-  background-color: var(--main-color);
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
 }
