@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Search</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- الهيدر والنافبار -->
+    <header>
+      <nav class="navbar">
+        <div class="logo"><img src="img/Group (2).png" alt="Logo" /></div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">All Jobs</a></li>
+          <li><a href="#">Companies</a></li>
+          <li><a href="#">People</a></li>
+          <li><a href="#">Career Advice</a></li>
+        </ul>
+        <div class="nav-icons">
+          <i class="fa-regular fa-bell"></i>
+          <i class="fa-regular fa-user"></i>
+        </div>
+      </nav>
+    </header>
+    <!-- قسم البحث والفلاتر -->
+    <section class="search-filters">
+      <div class="search-header">
+        <h1>Search <span>Jobs</span></h1>
+      </div>
+      <div class="search-filters-container">
+        <div class="search-box">
+          <label for="search">Search</label>
+          <div class="input-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search" placeholder="UX UI Designer" />
+          </div>
+        </div>
+        <div class="filters">
+          <label>Filters</label>
+          <div class="filter-options">
+            <select>
+              <option>Location</option>
+            </select>
+            <select>
+              <option>Job type</option>
+            </select>
+            <select>
+              <option>Experience level</option>
+            </select>
+            <select>
+              <option>Company type</option>
+            </select>
+          </div>
+        </div>
+        <div class="clear-filter">
+          <p>Clear filter</p>
+        </div>
+      </div>
+    </section>
+    <!-- قائمة الوظائف -->
+    <div class="container">
+      <aside class="sidebar">
+        <p class="results">32 results for<span>UI/UX Designer</span></p>
+        <div class="job-card">
+          <img src="img/Group.png" alt="Job Image" />
+          <div class="job-details">
+            <h3>UI / UX Designer</h3>
+            <p>$95K - $120K</p>
+            <p><i class="fa fa-home"></i> Laboroum</p>
+            <p><i class="fa-solid fa-location-dot"></i> Tucson, AZ</p>
+            <p><i class="fa-regular fa-bookmark"></i> Onsite</p>
+          </div>
+        </div>
+        <div class="job-card">
+          <img src="img/Image 23.png" alt="Job Image" />
+          <div class="job-details">
+            <h3>Senior UI/UX Designer</h3>
+            <p>$110K - $120K</p>
+            <p><i class="fa fa-home"></i> Partalur</p>
+            <p><i class="fa-solid fa-location-dot"></i> Columbus, OH</p>
+            <p><i class="fa-regular fa-bookmark"></i> Hybrid</p>
+          </div>
+        </div>
+        <div class="job-card">
+          <img src="img/Image 22.png" alt="Job Image" />
+          <div class="job-details">
+            <h3>UX Copywriter</h3>
+            <p>$70K - $90K</p>
+            <p><i class="fa fa-home"></i> Aliq</p>
+            <p><i class="fa-solid fa-location-dot"></i> Tulsa, OK</p>
+            <p><i class="fa-regular fa-bookmark"></i> Remote</p>
+          </div>
+        </div>
+        <div class="job-card">
+          <img src="img/Group (1).png" alt="Job Image" />
+          <div class="job-details">
+            <h3>UI/UX Designer Negotiate</h3>
+            <p>$80K - $100K</p>
+            <p><i class="fa fa-home"></i> Deserunt</p>
+            <p><i class="fa-solid fa-location-dot"></i> Santa Ana, CA</p>
+            <p><i class="fa-regular fa-bookmark"></i> Onsite</p>
+          </div>
+        </div>
+        <!-- الزرار-->
+        <div class="show-more-container">
+          <button class="show-more-btn">Show more</button>
+        </div>
+      </aside>
+    </div>
+    <!-- قسم الملف الشخصي -->
+    <section class="profile-section">
+      <div class="profile-content">
+        <h1>Complete your profile</h1>
+        <p>Update your profile to get better job recommendations.</p>
+        <button class="update-btn">Update profile</button>
+      </div>
+      <div class="profile-image">
+        <img
+          src="img/a4a4737dbddb1c84152f57583fb030fd.png"
+          alt="Profile Picture"
+          class="main-img"
+        />
+        <img
+          src="img/a03c4b443811e8029b4c48959592e6c0.png"
+          alt="Small Profile"
+          class="small-img"
+        />
+        <div class="icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+      </div>
+    </section>
+    <!-- الفوتر -->
+    <footer>
+      <div class="footer-links">
+        <div class="footer-logo">
+          <div class="logo"><img src="img/Image 26.png" alt="Logo" /></div>
+        </div>
+        <div>
+          <h3>Product</h3>
+          <ul>
+            <li>All Jobs</li>
+            <li>Companies</li>
+            <li>Candidates</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Resources</h3>
+          <ul>
+            <li>Blog</li>
+            <li>User guides</li>
+            <li>Webinars</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li>About</li>
+            <li>Join us</li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h3>Subscribe to our newsletter</h3>
+          <p>For product announcements and exclusive insights</p>
+          <div class="subscribe-box">
+            <input type="email" placeholder="Input your email" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-text">
+          © 2022 Brand, Inc. • Privacy • Terms • Sitemap
+        </div>
+        <div class="social-icons">
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-linkedin"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
