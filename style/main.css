@@ -23,6 +23,12 @@ a {
   color: black;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 /* Start Componant */
 
 .headTitel {
@@ -38,9 +44,6 @@ a {
   color: var(--main-color);
   margin-left: 10px;
   font-size: 43px;
-}
-
-.headTitel p {
 }
 
 /* Start Componant */
@@ -95,3 +98,122 @@ nav .container .icons .profile-icon img {
 }
 
 /* Nav */
+
+/* footer */
+/* Fotter  */
+footer {
+  height: 320px;
+  background-color: rgba(23, 26, 31, 1);
+  color: white;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Sarabun", sans-serif;
+}
+.footer-logo {
+  justify-content: center;
+  display: flex;
+  align-items: start;
+  height: 60%;
+  margin-top: 30px;
+}
+.footer-logo img {
+  width: 115px;
+}
+.footer-section {
+  height: 60%;
+  justify-content: start;
+  display: flex;
+  flex-direction: column;
+}
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+.footer-section ul {
+  list-style: none;
+  line-height: 35px;
+  padding: 0;
+}
+.footer-section ul li a {
+  color: rgba(222, 225, 230, 1);
+  font-size: 14px;
+  text-decoration: none;
+}
+.footer-section ul li a:hover {
+  color: rgba(14, 168, 155, 1);
+}
+.footer-subscribe {
+  height: 60%;
+  line-height: 20px;
+}
+.footer-subscribe h3 {
+  color: rgba(14, 168, 155, 1);
+  font-size: 20px;
+}
+.footer-subscribe p {
+  color: rgba(222, 225, 230, 1);
+  font-size: 12px;
+}
+.footer-subscribe form input {
+  width: 269px;
+  height: 36px;
+  background: rgba(29, 29, 29, 1);
+  border: 0;
+  color: rgba(222, 225, 230, 1);
+}
+.footer-subscribe form button {
+  width: 114px;
+  height: 36px;
+  background: #009688;
+  color: white;
+  border: 0;
+}
+.footer-info {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+.footer-info a {
+  color: rgba(222, 225, 230, 1);
+  text-decoration: none;
+}
+.footer-social {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  font-size: 19px;
+}
+.footer-social .twitter {
+  color: rgba(46, 186, 232, 1);
+}
+.footer-social .facebook {
+  color: rgba(46, 111, 232, 1);
+}
+.footer-social .linkedin {
+  color: rgba(88, 128, 222, 1);
+}
+.footer-social .youtube {
+  color: rgba(232, 46, 46, 1);
+}
+.language-selector {
+  position: relative;
+  bottom: 30px;
+}
+.language-selector select {
+  background: rgba(29, 29, 29, 1);
+  color: white;
+  width: 127px;
+  height: 35px;
+  border: 0;
+  padding: 5px;
+}
+
+/* footer */

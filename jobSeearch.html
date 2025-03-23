@@ -3,32 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Job Search</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>WorkNest - Job Search</title>
+    <!-- Lato & Sarabun Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="./style/all.css" />
+    <link rel="stylesheet" href="./style/all.min.css" />
+    <link rel="stylesheet" href="./style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/jobSeearch.css" />
+    <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <!-- الهيدر والنافبار -->
-    <header>
-      <nav class="navbar">
-        <div class="logo"><img src="img/Group (2).png" alt="Logo" /></div>
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">All Jobs</a></li>
-          <li><a href="#">Companies</a></li>
-          <li><a href="#">People</a></li>
-          <li><a href="#">Career Advice</a></li>
-        </ul>
-        <div class="nav-icons">
-          <i class="fa-regular fa-bell"></i>
-          <i class="fa-regular fa-user"></i>
+    <nav>
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <div class="logo">
+            <a href="">
+              <img src="./images/logo1.png" width="100" alt="logo" />
+            </a>
+          </div>
+          <ul class="links list-unstyled d-flex m-0">
+            <li><a class="active" href="">Home</a></li>
+            <li><a href="">All Jobs</a></li>
+            <li><a href="">Companies</a></li>
+            <li><a href="">All CVs</a></li>
+            <li><a href="">Career Advices</a></li>
+          </ul>
         </div>
-      </nav>
-    </header>
-    <!-- قسم البحث والفلاتر -->
+        <div class="icons d-flex align-items-center justify-content-between">
+          <a class="notification-icon" href="">
+            <i class="fa-regular fa-bell"></i>
+          </a>
+          <a
+            class="profile-icon d-flex justify-content-between align-items-center"
+            href="./profile.html"
+          >
+            <img
+              class="profile-image"
+              src="./images/profile-image.png"
+              alt=""
+            />
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
     <section class="search-filters">
       <div class="search-header">
         <h1>Search <span>Jobs</span></h1>
@@ -136,55 +160,66 @@
         </div>
       </div>
     </section>
-    <!-- الفوتر -->
     <footer>
-      <div class="footer-links">
-        <div class="footer-logo">
-          <div class="logo"><img src="img/Image 26.png" alt="Logo" /></div>
-        </div>
-        <div>
-          <h3>Product</h3>
-          <ul>
-            <li>All Jobs</li>
-            <li>Companies</li>
-            <li>Candidates</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Resources</h3>
-          <ul>
-            <li>Blog</li>
-            <li>User guides</li>
-            <li>Webinars</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Join us</li>
-          </ul>
-        </div>
-        <div class="newsletter">
-          <h3>Subscribe to our newsletter</h3>
-          <p>For product announcements and exclusive insights</p>
-          <div class="subscribe-box">
-            <input type="email" placeholder="Input your email" />
-            <button>Subscribe</button>
-          </div>
-        </div>
+      <!-- <div class="container"> -->
+      <div class="footer-logo">
+        <img src="./images/logo1.png" alt="#" />
       </div>
-      <div class="footer-bottom">
-        <div class="footer-text">
-          © 2022 Brand, Inc. • Privacy • Terms • Sitemap
-        </div>
-        <div class="social-icons">
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-linkedin"></i>
-          <i class="fab fa-youtube"></i>
-        </div>
+      <div class="footer-section">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="#">All Jobs</a></li>
+          <li><a href="#">Companies</a></li>
+          <li><a href="#">Candidates</a></li>
+        </ul>
       </div>
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">User guides</a></li>
+          <li><a href="#">Webinars</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Join us</a></li>
+        </ul>
+      </div>
+      <div class="footer-subscribe">
+        <h3>Subscribe to our newsletter</h3>
+        <p>For product announcements and exclusive insights</p>
+        <form>
+          <input
+            type="email"
+            placeholder=" Input your email"
+            required
+            invalid
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-info">
+        <p>© 2022 Brand, Inc.</p>
+        <a href="#">• Privacy</a>
+        <a href="#">• Terms</a>
+        <a href="#">• Sitemap</a>
+      </div>
+      <div class="footer-social">
+        <a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a class="linkedin" href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a class="youtube" href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="language-selector">
+        <select>
+          <option>English</option>
+          <option>Arabic</option>
+        </select>
+      </div>
+      <!-- </div> -->
     </footer>
   </body>
 </html>

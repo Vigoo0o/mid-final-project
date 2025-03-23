@@ -86,9 +86,9 @@
           <button class="border-0" type="button">Search</button>
         </form>
         <div
-          class="categoresSlider d-flex justify-content-center align-items-center"
+          class="slider-container categoresSlider d-flex justify-content-center align-items-center"
         >
-          <i class="fa-solid fa-angle-left"></i>
+          <i class="fa-solid fa-angle-left" id="prevBtn"></i>
           <div class="categore" style="background-color: #ecfdfc">
             <div class="icon d-flex justify-content-center align-items-center">
               <img src="./images/financeCategory.png" alt="" />
@@ -115,7 +115,7 @@
             <div class="categoreName">Marketing</div>
             <span><span class="countOfJobs">5768</span> jobs</span>
           </div>
-          <i class="fa-solid fa-angle-right"></i>
+          <i class="fa-solid fa-angle-right" id="nextBtn"></i>
         </div>
       </div>
     </div>
@@ -308,7 +308,9 @@
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-primary">See More</button>
+      <a href="./jobSeearch.html">
+        <button type="button" class="btn btn-primary">See More</button>
+      </a>
     </div>
     <div class="cvs">
       <div class="container">
@@ -407,6 +409,7 @@
         </div>
       </div>
     </footer>
+    <a href="./postNewJob.html">Job Seearch</a>
     <script src="./js/main.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
   </body>
