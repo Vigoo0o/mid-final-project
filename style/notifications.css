@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #f1f5f9;
+  background-color: #ecfdfcff;
 }
 
 .container {
@@ -11,7 +11,7 @@ body {
 }
 
 .container .tabs {
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   gap: 20px;
 }
 
@@ -39,6 +39,7 @@ body {
 .container .notifications .notification {
   cursor: pointer;
   transition: var(--main-transition);
+  margin-top: 50px;
 }
 
 .container .notifications .notification:not(:last-child) {

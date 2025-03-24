@@ -1,0 +1,58 @@
+form.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #f3f4f6ff;
+  padding: 15px 20px;
+  border-radius: 4px;
+  background-color: #fff;
+  text-align: center;
+}
+
+form input {
+  margin-bottom: 15px;
+}
+
+form input.emailInput {
+  margin-bottom: 0;
+}
+
+form small {
+  float: left;
+  /* display: block; */
+  width: 100%;
+  text-align: start;
+  margin-bottom: 15px;
+}
+
+form label {
+  /* text-align: ; */
+  float: left;
+}
+
+form button {
+  margin: 20px auto;
+  width: 100%;
+  background-color: var(--main-color);
+  border: none;
+}
+
+form h2 {
+  margin: 20px auto;
+  font-weight: 700;
+}
+
+form img.logo {
+  width: 250px;
+}
+
+form div.haveAcc {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+form div.haveAcc a {
+  color: var(--main-color);
+}

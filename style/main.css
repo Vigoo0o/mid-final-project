@@ -211,4 +211,183 @@ footer {
 }
 
 /* End Footer */
+
+/* Start Page Componant */
+.page {
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.page .container {
+}
+
+.page .head {
+}
+
+.page .head .title {
+}
+
+.page .head .title h1 {
+  font-size: 48px;
+  line-height: 68px;
+  font-weight: 700;
+  margin: 40px 0;
+}
+
+.page .head .title h1 span {
+  color: #0ea89bff;
+}
+
+.page .head .searchFilters {
+  margin-bottom: 40px;
+}
+.page .head .searchFilters form {
+}
+
+.page .head .searchFilters form .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page .head .searchFilters form .col {
+}
+
+.page .head .searchFilters form .col.searchInput {
+  flex-grow: 1.5;
+  position: relative;
+  border-right: 2px solid #dee1e6ff;
+}
+
+.page .head .searchFilters form .col.searchInput i {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  font-size: 16px;
+  color: var(--main-color);
+}
+
+.page .head .searchFilters form .col.searchSelect {
+  flex-grow: 1;
+}
+
+.page .head .searchFilters form .col input {
+  width: 350px;
+  height: 44px;
+  padding-left: 44px;
+  padding-right: 16px;
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  background: #f3f4f6ff; /* neutral-200 */
+  border-radius: 6px; /* border-l */
+  border-width: 0px;
+  outline: none;
+}
+
+.page .head .searchFilters form .col label {
+}
+
+.page .head .searchFilters form .col select {
+  width: 100%;
+  height: 44px;
+  padding-left: 16px;
+  /* padding-right: 44px; */
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #171a1fff; /* neutral-900 */
+  background: #f3f4f6ff; /* neutral-200 */
+  border-radius: 6px; /* border-l */
+  border-width: 0px;
+  outline: none;
+}
+
+.page .head .searchFilters form .col select option {
+}
+
+.page .body {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.page .body .content {
+  width: 100%;
+}
+
+.page .body .content .totalResult {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  color: #171a1fff;
+}
+
+.page .body .content .totalResult span {
+  color: var(--main-color);
+}
+
+.page .body .content .results {
+  margin-top: 25px;
+}
+
+.page .body .content .results .result {
+  display: flex;
+  padding: 15px;
+  border: 1px solid #f3f4f6ff;
+  border-radius: 4px;
+}
+
+.page .body .content .results .result:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.page .body .sidebar {
+  /* width: 350px; */
+  /* background-color: red; */
+  width: 348px;
+  padding: 20px;
+}
+
+.page .switchPage {
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+}
+
+.page .switchPage i {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.page .switchPage i:first-of-type {
+}
+
+.page .switchPage .pages {
+}
+
+.page .switchPage .pages button {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #9095a0ff;
+  background: #ffffffff;
+  border-radius: 4px;
+  border: 1px solid #dee1e6ff;
+  padding: 6px 12px;
+}
+
+.page .switchPage .pages button.active {
+  color: #ffffffff;
+  background: #0b877cff;
+}
+
+.page .switchPage i:last-of-type {
+}
+/* End Page Componant */
+
 /* Start Componant */
