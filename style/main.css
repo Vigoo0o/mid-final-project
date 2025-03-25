@@ -94,6 +94,18 @@ nav .container .icons .profile-icon img {
   border-radius: 50%;
 }
 
+nav .container .login-btn {
+  background-color: var(--main-color);
+  color: white;
+  font-weight: 600;
+}
+
+nav .container .register-btn {
+  background-color: var(--main-background-color);
+  color: var(--main-color);
+  font-weight: 600;
+}
+
 /* End Nav */
 
 /* Start Fotter  */

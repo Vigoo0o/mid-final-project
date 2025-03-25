@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorkNest - Company Login</title>
+    <link rel="stylesheet" href="./style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/login.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo">
+          <a href="./index.html">
+            <img class="logo" src="./images/logo.png" alt="logo" />
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <form class="login">
+      <h2>Company Login</h2>
+
+      <div class="form-group" style="margin-bottom: 15px">
+        <label for="companyEmail">Company Email</label>
+        <input
+          type="email"
+          class="emailInput form-control"
+          id="companyEmail"
+          placeholder="Enter company email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="companyPassword">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="companyPassword"
+          placeholder="Password"
+        />
+      </div>
+
+      <div class="haveAcc">
+        <p>Don't have an account?</p>
+        <a href="./company-signup.html">Sign Up</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
