@@ -180,7 +180,7 @@ ul {
   color: #777;
 }
 
-.latestJobs .jobs {
+/* .latestJobs .jobs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
@@ -242,7 +242,7 @@ ul {
 
 .latestJobs .jobs .job .body .details span {
   color: #777;
-}
+} */
 
 .latestJobs .btn,
 .cvs .btn {

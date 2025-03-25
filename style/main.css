@@ -390,4 +390,72 @@ footer {
 }
 /* End Page Componant */
 
+/* Start Jobs Box */
+.jobs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.jobs .job {
+  position: relative;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0.5px solid #eee;
+}
+
+.latestJobs .jobs .job .head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.jobs .job .head .image img {
+  width: 65px;
+  margin: 0 5px 10px 0;
+}
+
+.jobs .job .head .jobDetails .jobTitle {
+  font-weight: 800;
+}
+
+.jobs .job .head .tag {
+  position: absolute;
+  right: 8px;
+  font-size: 11px;
+  top: 8px;
+  padding: 5px 10px;
+  background-color: #fff6f0;
+  border-radius: 10px;
+  color: #ff832b;
+}
+
+.jobs .job .body .details .detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jobs .job .body .details .detail .icon {
+  margin: 0;
+}
+
+.jobs .job .body .details .detail .icon i {
+  color: #ddd;
+  font-size: 17px;
+}
+
+.jobs .job .body .details .detail:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.jobsjob .body .details span {
+  color: #777;
+}
+
+/* End Jobs Box */
+
 /* Start Componant */

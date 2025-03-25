@@ -3,3 +3,5 @@
 - Active Links In pages
 
 - Font Family
+
+- fix image path in company profile

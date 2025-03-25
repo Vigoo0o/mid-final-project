@@ -8,6 +8,7 @@ form.login {
   border-radius: 4px;
   background-color: #fff;
   text-align: center;
+  width: 450px;
 }
 
 form input {
@@ -34,8 +35,8 @@ form label {
 form button {
   margin: 20px auto;
   width: 100%;
-  background-color: var(--main-color);
-  border: none;
+  background-color: var(--main-color) !important;
+  border: none !important;
 }
 
 form h2 {
