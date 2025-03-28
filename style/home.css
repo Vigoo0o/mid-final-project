@@ -259,8 +259,9 @@ ul {
 }
 
 .cvs .content {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
 }
 
@@ -269,6 +270,7 @@ ul {
   border-radius: 5px;
   position: relative;
   border: 1px solid #eee;
+  width: 350px;
 }
 
 .cvs .content .cv .image {
