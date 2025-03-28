@@ -5,3 +5,29 @@
 - Font Family
 
 - fix image path in company profile
+
+- Tarek
+
+  - Home
+  - People
+  - Login & Sign-Up
+  - Notification 
+  - Post New Job
+
+
+- Mohamed
+
+  - All Jobs
+  - Profile
+  - Company Profile
+
+
+- Nada
+
+  - Companies Page
+  - Edit Profile  --> Not Complite
+
+
+- Ahmed, Doaa, Asmaa Y
+
+  - Search Job

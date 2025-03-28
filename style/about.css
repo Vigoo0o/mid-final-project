@@ -1,0 +1,37 @@
+.content > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 40vh);
+  gap: 40px;
+}
+
+.content div h2 {
+  color: var(--main-color);
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.content div .info p {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.content .whoWeAre .image img {
+}
+
+.outMission {
+  /* background-color: var(--main-/); */
+}
+
+ul {
+  list-style-type: disc;
+}
+
+.join {
+  flex-direction: column;
+  gap: 10px !important;
+  justify-content: start !important;
+  padding: 90px 0;
+  height: fit-content !important;
+}
