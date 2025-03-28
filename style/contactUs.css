@@ -1,0 +1,8 @@
+.contact .content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact .content .info {
+  flex-basis: 25%;
+}

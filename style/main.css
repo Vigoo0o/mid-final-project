@@ -521,7 +521,7 @@ footer {
   padding-top: var(--section-padding);
   padding-bottom: 50px;
 }
-.contact .content {
+/* .contact .content {
   display: flex;
   justify-content: space-between;
 }
@@ -529,7 +529,7 @@ footer {
   .contact .content {
     flex-direction: column;
   }
-}
+} */
 .contact .content form {
   flex-basis: 70%;
 }
@@ -565,15 +565,13 @@ footer {
   cursor: pointer;
   border-radius: 6px; /* border-l */
 }
-.contact .content .info {
-  flex-basis: 25%;
-}
-@media (max-width: 767px) {
+
+/* @media (max-width: 767px) {
   .contact .content .info {
     order: -1;
     text-align: center;
   }
-}
+} */
 .contact .content .info h4 {
   text-transform: uppercase;
   margin-bottom: 30px;
