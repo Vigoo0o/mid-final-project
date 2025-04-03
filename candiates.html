@@ -64,14 +64,12 @@
               <img class="logo" src="./images/logo.png" alt="logo" />
             </a>
           </div>
-          <ul class="links list-unstyled d-flex m-0">
-            <li><a href="./index.html">Home</a></li>
+          <ul class="links list-unstyled m-0 d-none d-lg-flex">
+            <li><a class="active" href="./index.html">Home</a></li>
             <li><a href="./alljobs.html">All Jobs</a></li>
             <li><a href="./company.html ">Companies</a></li>
             <li><a class="active" href="./candiates.html">People</a></li>
             <li><a href="./suggestions.html">Suggestions</a></li>
-
-            <!-- <li><a href="">Career Advices</a></li> -->
           </ul>
         </div>
         <!-- <div class="icons d-flex align-items-center justify-content-between">
@@ -91,7 +89,7 @@
           </a>
         </div> -->
         <div
-          class="loginAndRejustr d-flex align-items-center justify-content-between gap-2"
+          class="loginAndRegister d-flex align-items-center justify-content-between gap-2"
         >
           <button
             type="button"
@@ -112,6 +110,52 @@
           >
             Register
           </button>
+        </div>
+        <!-- <div class="burgerIcon d-none">
+          <i class="fa-solid fa-bars"></i>
+        </div> -->
+
+        <div class="dropdown d-block d-lg-none">
+          <button class="btn" type="button" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" class="active" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li><a class="dropdown-item" href="./alljobs.html">All Jobs</a></li>
+            <li>
+              <a class="dropdown-item" href="./company.html ">Companies</a>
+            </li>
+            <li>
+              <a class="dropdown-item active" href="./candiates.html">People</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="./suggestions.html">Suggestions</a>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="login-btn btn"
+                onclick="openPopup('login')"
+                data-bs-toggle="modal"
+                data-bs-target="#chooseTypeModal"
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                class="register-btn btn"
+                onclick="openPopup('register')"
+                data-bs-toggle="modal"
+                data-bs-target="#chooseTypeModal"
+              >
+                Register
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>

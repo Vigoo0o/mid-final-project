@@ -489,6 +489,12 @@ footer div {
   padding: 20px;
 }
 
+@media (max-width: 992px) {
+  .page .body .sidebar {
+    display: none;
+  }
+}
+
 .page .switchPage {
   margin: 50px auto;
   display: flex;
