@@ -3,8 +3,20 @@
   background-color: var(--main-background-color);
 }
 
+@media (max-width: 992px) {
+  .landing .container {
+    justify-content: center !important;
+  }
+}
+
 .landing .container .info {
   width: 550px;
+}
+
+@media (max-width: 992px) {
+  .landing .container .info {
+    text-align: center;
+  }
 }
 
 .landing .container .info h1 {
@@ -29,6 +41,22 @@
   border: none;
 }
 
+@media (max-width: 576px) {
+  .landing .container .info h1 {
+    font-size: 40px;
+  }
+
+  .landign .container .info p {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .landing .container .info a {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+}
+
 .landing .container .shape {
   width: 500px;
   height: 250px;
@@ -37,6 +65,12 @@
   box-shadow: 10px 10px 30px rgba(14, 168, 155, 0.4),
     -10px -10px 30px rgba(255, 255, 255, 0.2);
   position: relative;
+}
+
+@media (max-width: 992px) {
+  .landing .container .shape {
+    display: none !important;
+  }
 }
 
 .landing .container .shape img {
@@ -87,6 +121,15 @@ ul {
   padding-bottom: var(--main-section-bottom-padding);
 }
 
+.jobExplore .jobSearchForm {
+}
+
+@media (max-width: 678px) {
+  .jobExplore .jobSearchForm input[type="search"] {
+    width: 250px;
+  }
+}
+
 .jobExplore .jobSearchForm input {
   width: 400px;
   background-color: #eee;
@@ -106,6 +149,13 @@ ul {
 .jobExplore .categoresSlider {
   margin-top: 50px;
   gap: 40px;
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  .jobExplore .categoresSlider {
+    flex-wrap: wrap;
+  }
 }
 
 .jobExplore .categoresSlider i:first-of-type,
@@ -117,6 +167,21 @@ ul {
   font-size: 21px;
   cursor: pointer;
   padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.jobExplore .categoresSlider i:first-of-type {
+  left: 0px;
+}
+
+.jobExplore .categoresSlider i:last-of-type {
+  right: 0px;
 }
 
 .jobExplore .categoresSlider .categore {
@@ -263,6 +328,7 @@ ul {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .cvs .content .cv {

@@ -14,94 +14,24 @@
     <link rel="stylesheet" href="../style/all.min.css" />
     <link rel="stylesheet" href="../style/bootstrap.min.css" />
     <link rel="stylesheet" href="../style/main.css" />
+
     <style>
-      .test-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      .content {
+        display: flex;
+        background-color: #eee;
+        width: 500px;
       }
 
-      .card-test {
-        position: relative;
-        width: 250px;
-        top: -21px;
-        padding: 10px;
-        border-radius: 50%;
-        height: 300px;
-        background-color: #f8f9fa;
-        padding: 10px;
-        border-radius: 5px;
+      .content div {
+        width: 100px;
         text-align: center;
-        overflow: hidden;
-        transition: 0.3s;
-      }
-
-      .card-test .description {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background-color: #dee2e6;
-        border-radius: 0 0 5px 5px;
-        height: 100px;
-        width: 100%;
-        padding-top: 30px;
-        bottom: -123px;
-        transition: 0.3s;
-      }
-
-      .card-test:hover .description {
-        bottom: 0;
-      }
-
-      .card-test .description .image {
-        position: absolute;
-        top: -21px;
-        padding: 10px;
-        border: 1px solid black;
-        border-radius: 50%;
-        left: 10px;
-        background-color: #dee2e6;
-      }
-
-      .card-test .description .info {
-        position: absolute;
-        /* left: 20px; */
-        /* bottom: 25px; */
-        width: 100%;
-        text-align: center;
-      }
-
-      .card-test .description .info .jop-name {
-      }
-
-      .card-test .description .info .jop-name,
-      .card-test .description .info .rate .times {
-        font-size: 14px;
-      }
-
-      .card-test .description .info .jop-name > span {
-      }
-
-      .card-test .description .info .jop-name span:last-child {
-      }
-
-      .card-test .description .info .rate {
-      }
-
-      .card-test .description .info .rate .icons {
-      }
-
-      .card-test .description .info .rate .times {
-      }
-
-      .card-test:hover .description {
-        display: block;
+        background-color: #ddd;
       }
     </style>
   </head>
+
   <body>
-    <div class="test-container">
+    <!-- <div class="test-container">
       <div class="card-test">
         <div class="cv">CV</div>
         <div class="description">
@@ -277,6 +207,13 @@
           <div class="rate"></div>
         </div>
       </div>
+    </div> -->
+
+    <div class="content">
+      <div class="item1">1</div>
+      <div class="item2">2</div>
+      <div class="item3">3</div>
+      <div class="item4">4</div>
     </div>
   </body>
 </html>

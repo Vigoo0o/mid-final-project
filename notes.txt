@@ -1,33 +1,55 @@
-- The Links Doe's Not 
-
-- Active Links In pages
-
 - Font Family
+- Do Not Forget Add Burger Icon To Nav Bar And Make Hover Or Clic Efect !Important
 
-- fix image path in company profile
+################ Team Activity #################
 
-- Tarek
-
-  - Home
-  - People
-  - Login & Sign-Up
-  - Notification 
-  - Post New Job
-
-
-- Mohamed
-
-  - All Jobs
-  - Profile
-  - Company Profile
+- Tarek's Team:
+  -- Home
+  -- People
+  -- Login & Sign-Up
+  -- Notification 
+  -- Post New Job
+  -- About US
+  -- Contact US
+  -- Suggestions
 
 
-- Nada
+- Mohamed's Team:
+  -- All Jobs
+  -- Profile
+  -- Company Profile
 
-  - Companies Page
-  - Edit Profile  --> Not Complite
+
+- Nada's Team:
+  -- Companies Page
+  -- Edit Profile  --> Not Complite
 
 
 - Ahmed, Doaa, Asmaa Y
 
   - Search Job
+
+###############################################
+
+
+########## Media Query Reviow #################
+
+  max-width: 10px  -->  From 10px To Down
+
+  min-width: 10px  -->  From 10px To UP
+
+###############################################
+
+
+- Home
+
+- All Job
+- Companies
+- People
+- Category
+- Profile
+
+- About US
+
+- Contact US
+- Suggestions

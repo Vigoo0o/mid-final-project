@@ -103,6 +103,15 @@ nav .container .logo img {
   margin-right: 20px;
 }
 
+nav .container > div ul {
+}
+
+/* @media (max-width: 992px) {
+  nav .container > div ul {
+    display: none;
+  }
+} */
+
 nav .container > div ul li a {
   color: var(--second-text-color);
   padding: 15px;
@@ -138,6 +147,15 @@ nav .container .icons .profile-icon img {
   border-radius: 50%;
 }
 
+nav .contact .loginAndRegister {
+}
+
+@media (max-width: 992px) {
+  nav .loginAndRegister {
+    display: none !important;
+  }
+}
+
 nav .container .login-btn {
   background-color: var(--main-color);
   color: white;
@@ -150,6 +168,33 @@ nav .container .register-btn {
   font-weight: 600;
 }
 
+nav .container .dropdown {
+}
+
+nav .container .dropdown button {
+  border: 1px solid #ddd;
+  display: flex;
+}
+
+nav .container .dropdown button i {
+  font-size: 20px;
+}
+
+nav .container .dropdown ul {
+  padding: 0;
+  width: 200px;
+}
+
+nav .container .dropdown ul li a {
+  margin: 0;
+}
+
+nav .container .dropdown ul li:last-child {
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 /* End Nav */
 
 /* Start Fotter  */
@@ -159,10 +204,18 @@ footer {
   color: white;
   padding: 30px 50px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: space-between;
+  align-items: center; */
   flex-wrap: wrap;
+  height: 100%;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
 }
+
+footer div {
+}
+
 .footer-logo {
   justify-content: center;
   display: flex;
@@ -174,13 +227,15 @@ footer {
   width: 115px;
 }
 .footer-section {
-  height: 60%;
+  height: 100%;
   justify-content: start;
   display: flex;
   flex-direction: column;
 }
+
 .footer-section h3 {
   margin-bottom: 10px;
+  font-size: 25px;
 }
 .footer-section ul {
   list-style: none;
@@ -264,6 +319,31 @@ footer {
   height: 35px;
   border: 0;
   padding: 5px;
+}
+
+@media (max-width: 678px) {
+  .footer-logo {
+    width: 100%;
+  }
+  .footer-logo img {
+    width: 300px;
+  }
+  .footer-section {
+    display: block;
+    width: 100%;
+  }
+
+  .footer-subscribe form input {
+    width: 200px;
+  }
+
+  .footer-subscribe form button {
+    width: 85px;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
 }
 
 /* End Footer */
@@ -450,6 +530,8 @@ footer {
 .jobs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  /* grid-template-columns: 1fr 1fr ; */
   gap: 10px;
 }
 

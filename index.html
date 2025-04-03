@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <!-- Modal -->
     <div
       class="modal fade"
       id="chooseTypeModal"
@@ -63,7 +62,7 @@
               <img class="logo" src="./images/logo.png" alt="logo" />
             </a>
           </div>
-          <ul class="links list-unstyled d-flex m-0">
+          <ul class="links list-unstyled m-0 d-none d-lg-flex">
             <li><a class="active" href="./index.html">Home</a></li>
             <li><a href="./alljobs.html">All Jobs</a></li>
             <li><a href="./company.html ">Companies</a></li>
@@ -88,7 +87,7 @@
           </a>
         </div> -->
         <div
-          class="loginAndRejustr d-flex align-items-center justify-content-between gap-2"
+          class="loginAndRegister d-flex align-items-center justify-content-between gap-2"
         >
           <button
             type="button"
@@ -109,6 +108,50 @@
           >
             Register
           </button>
+        </div>
+        <!-- <div class="burgerIcon d-none">
+          <i class="fa-solid fa-bars"></i>
+        </div> -->
+
+        <div class="dropdown d-block d-lg-none">
+          <button class="btn" type="button" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" class="active" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li><a class="dropdown-item" href="./alljobs.html">All Jobs</a></li>
+            <li>
+              <a class="dropdown-item" href="./company.html ">Companies</a>
+            </li>
+            <li><a class="dropdown-item" href="./candiates.html">People</a></li>
+            <li>
+              <a class="dropdown-item" href="./suggestions.html">Suggestions</a>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="login-btn btn"
+                onclick="openPopup('login')"
+                data-bs-toggle="modal"
+                data-bs-target="#chooseTypeModal"
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                class="register-btn btn"
+                onclick="openPopup('register')"
+                data-bs-toggle="modal"
+                data-bs-target="#chooseTypeModal"
+              >
+                Register
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -389,7 +432,7 @@
         </div>
         <div class="content">
           <a href="./profile.html">
-            <div class="cv">
+            <!-- <div class="cv">
               <div class="image"><img src="./images/cv1.png" alt="" /></div>
               <div class="info">
                 <div class="profile">
@@ -401,7 +444,7 @@
                 <div class="ex">Experience: <span>5 years in IT</span></div>
                 <div class="readIn">15 mins read</div>
               </div>
-            </div>
+            </div> -->
           </a>
           <a href="./profile.html">
             <div class="cv">
