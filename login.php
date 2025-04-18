@@ -1,3 +1,11 @@
+<?php
+  if (isset($_GET['status']) && $_GET['status'] == 'success') {
+    echo '<div id="popup" style="background: #0ea89b; color: white; padding: 15px; text-align: center;">
+    Your account has been created successfully! You can log in now.
+    </div>';
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -82,9 +90,9 @@
       </div>
       <div class="haveAcc">
         <p>You Don't Have Account?</p>
-        <a href="./userSignUp.html">Sign-Up</a>
+        <a href="./userSignUp.php">Sign-Up</a>
       </div>
-      <a href="./login.html">
+      <a href="./login.php">
         <button type="submit" class="btn btn-primary">Login</button>
       </a>
     </form>

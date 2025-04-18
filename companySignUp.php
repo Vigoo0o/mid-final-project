@@ -19,7 +19,7 @@
       </div>
     </nav>
 
-    <form class="login">
+    <form class="login" method="POST" action="./handlers/companySignUpHandeler.php" >
       <h2>Company Sign Up</h2>
 
       <div class="form-group">
@@ -29,6 +29,7 @@
           type="text"
           class="form-control"
           placeholder="Enter company name"
+          name="name"
         />
       </div>
 
@@ -39,6 +40,7 @@
           type="text"
           class="form-control"
           placeholder="Enter industry type"
+          name="industry"
         />
       </div>
 
@@ -49,6 +51,7 @@
           type="text"
           class="form-control"
           placeholder="Enter contact person's name"
+          name="contact"
         />
       </div>
 
@@ -60,6 +63,7 @@
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="Enter email"
+          name="email"
         />
         <small id="emailHelp" class="form-text text-muted">
           We'll never share your email with anyone else.
@@ -73,6 +77,7 @@
           class="form-control"
           id="exampleInputPassword1"
           placeholder="Password"
+          name="password"
         />
       </div>
 

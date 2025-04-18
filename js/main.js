@@ -3,10 +3,10 @@ function openPopup(type) {
   let userLink = document.getElementById("userLink");
 
   if (type === "login") {
-    companyLink.href = "./login.html";
-    userLink.href = "./login.html";
+    companyLink.href = "./login.php";
+    userLink.href = "./login.php";
   } else if (type === "register") {
-    companyLink.href = "./companySignUp.html";
-    userLink.href = "./userSignUp.html";
+    companyLink.href = "./companySignUp.php";
+    userLink.href = "./userSignUp.php";
   }
 }

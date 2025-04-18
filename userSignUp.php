@@ -1,3 +1,11 @@
+<?php
+  if (isset($_GET['error']) && $_GET['error'] == 'error') {
+    echo '<div id="popup" style="background:#F44336; color: white; padding: 15px; text-align: center;">
+    Email already exists.
+    </div>';
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,7 +61,11 @@
         </div> -->
       </div>
     </nav>
-    <form class="login">
+    <form
+      class="login"
+      action="./handlers/userSignUpHandeler.php"
+      method="POST"
+    >
       <h2>Create Account</h2>
       <!-- <img class="logo" src="./images/logo.png" alt="logo" /> -->
 
@@ -65,6 +77,7 @@
             type="text"
             class="form-control"
             placeholder="First name"
+            name="firstName"
           />
         </div>
         <div class="col">
@@ -75,6 +88,7 @@
             type="text"
             class="form-control"
             placeholder="Last name"
+            name="lastName"
           />
         </div>
       </div>
@@ -86,6 +100,7 @@
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="Enter email"
+          name="email"
         />
         <small id="emailHelp" class="form-text text-muted"
           >We'll never share your email with anyone else.</small
@@ -98,6 +113,7 @@
           class="form-control"
           id="exampleInputPassword1"
           placeholder="Password"
+          name="password"
         />
       </div>
       <div class="haveAcc">
