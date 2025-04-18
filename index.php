@@ -1,3 +1,8 @@
+<?php
+  include './error.php';
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,6 +23,7 @@
     <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
+    
     <div
       class="modal fade"
       id="chooseTypeModal"
@@ -86,29 +92,43 @@
             <i class="fa-solid fa-chevron-down"></i>
           </a>
         </div> -->
-        <div
-          class="loginAndRegister d-flex align-items-center justify-content-between gap-2"
-        >
-          <button
-            type="button"
-            class="login-btn btn"
-            onclick="openPopup('login')"
-            data-bs-toggle="modal"
-            data-bs-target="#chooseTypeModal"
-          >
-            Login
-          </button>
+        
+        <?php 
+        if(!isset($_SESSION['user_type'])): ?>
+          <div class="loginAndRegister d-flex align-items-center justify-content-between gap-2">
+            <button
+              type="button"
+              class="login-btn btn"
+              onclick="openPopup('login')"
+              data-bs-toggle="modal"
+              data-bs-target="#chooseTypeModal"
+            >
+              Login
+            </button>
 
-          <button
-            type="button"
-            class="register-btn btn"
-            onclick="openPopup('register')"
-            data-bs-toggle="modal"
-            data-bs-target="#chooseTypeModal"
-          >
-            Register
-          </button>
-        </div>
+            <button
+              type="button"
+              class="register-btn btn"
+              onclick="openPopup('register')"
+              data-bs-toggle="modal"
+              data-bs-target="#chooseTypeModal"
+            >
+              Register
+            </button>
+          </div>
+      <?php else: ?>
+        <p>Welcome, 
+          <?php
+              if ($_SESSION['user_type'] == 'user') {
+                echo $_SESSION['user_firstName'] . ' ' . $_SESSION['user_lastName'];
+              } else {
+                echo $_SESSION['company_name'];
+              }
+          ?>
+        </p>
+      <?php endif; ?>
+
+
         <!-- <div class="burgerIcon d-none">
           <i class="fa-solid fa-bars"></i>
         </div> -->

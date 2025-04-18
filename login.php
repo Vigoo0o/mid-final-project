@@ -1,8 +1,17 @@
 <?php
+  include './error.php';
+  session_start();
+
   if (isset($_GET['status']) && $_GET['status'] == 'success') {
     echo '<div id="popup" style="background: #0ea89b; color: white; padding: 15px; text-align: center;">
     Your account has been created successfully! You can log in now.
     </div>';
+  }
+
+  if (isset($_GET['error'])) {
+    echo '<div id="popup" style="background: #F44336; color: white; padding: 15px; text-align: center;">
+    Invalid email or password
+    </div>';;
   }
 ?>
 
@@ -61,7 +70,7 @@
         </div> -->
       </div>
     </nav>
-    <form class="login">
+    <form class="login" method="POST" action="./handlers/loginHandeler.php" >
       <h2>Login</h2>
       <!-- <img class="logo" src="./images/logo.png" alt="logo" /> -->
 
@@ -74,6 +83,7 @@
           aria-describedby="emailHelp"
           placeholder="Enter email"
           style="margin-bottom: 15px"
+          name="email"
         />
         <!-- <small id="emailHelp" class="form-text text-muted"
           >We'll never share your email with anyone else.</small
@@ -86,13 +96,14 @@
           class="form-control"
           id="exampleInputPassword1"
           placeholder="Password"
+          name="password"
         />
       </div>
       <div class="haveAcc">
         <p>You Don't Have Account?</p>
         <a href="./userSignUp.php">Sign-Up</a>
       </div>
-      <a href="./login.php">
+      <a href="">
         <button type="submit" class="btn btn-primary">Login</button>
       </a>
     </form>
