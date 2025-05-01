@@ -195,6 +195,24 @@ nav .container .dropdown ul li:last-child {
   justify-content: space-evenly;
 }
 
+a.profilePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  font-size: 16px;
+  color: var(--main-color);
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width: 992px) {
+  a.profilePage {
+    /* display: none !important; */
+  }
+}
+
 /* End Nav */
 
 /* Start Fotter  */
@@ -384,7 +402,7 @@ footer div {
 
 .page .head .searchFilters form .row {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -392,7 +410,7 @@ footer div {
 }
 
 .page .head .searchFilters form .col.searchInput {
-  flex-grow: 1.5;
+  /* flex-grow: 1.5; */
   position: relative;
   border-right: 2px solid #dee1e6ff;
 }
@@ -410,7 +428,7 @@ footer div {
 }
 
 .page .head .searchFilters form .col input {
-  width: 350px;
+  /* width: 350px; */
   height: 44px;
   padding-left: 44px;
   padding-right: 16px;
@@ -471,14 +489,14 @@ footer div {
   margin-top: 25px;
 }
 
-.page .body .content .results .result {
+.result {
   display: flex;
   padding: 15px;
   border: 1px solid #f3f4f6ff;
   border-radius: 4px;
 }
 
-.page .body .content .results .result:not(:last-child) {
+.result:not(:last-child) {
   margin-bottom: 15px;
 }
 
@@ -536,7 +554,6 @@ footer div {
 .jobs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
   /* grid-template-columns: 1fr 1fr ; */
   gap: 10px;
 }
@@ -549,7 +566,7 @@ footer div {
   border: 0.5px solid #eee;
 }
 
-.latestJobs .jobs .job .head {
+.jobs .job .head {
   display: flex;
   align-items: center;
   gap: 15px;

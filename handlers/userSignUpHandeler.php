@@ -1,36 +1,46 @@
 <?php
 include '../db.php';
+include '../error.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
-  $firstName = htmlspecialchars(trim($_POST['firstName']));
-  $lastname = htmlspecialchars(trim($_POST['lastName']));
-  $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+  // $userName = htmlspecialchars(trim($_POST['username']));
+  $fullName = htmlspecialchars(trim($_POST['firstName'])) . ' ' . htmlspecialchars(trim($_POST['lastName']));
+  $jobTitle = htmlspecialchars(trim($_POST['jobTitle']));
+  $email = filter_var(trim(string: $_POST['email']), FILTER_SANITIZE_EMAIL);
   $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
 
-  // echo '<br>' . 'First Name: ' . $firstName . '<br>';
-  // echo 'Last Name: ' . $lastname . '<br>';
-  // echo 'Email: ' . $email . '<br>';
-  // echo 'Password: ' . $password . '<br>';
-
   // Check If The User Is Already Registered
-  $stmt = $conn->prepare("SELECT id FROM users WHERE email = :email");
+  $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = :email");
   $stmt->bindParam(':email', $email);
   $stmt->execute();
-  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+  $resultEmail = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  if ($result) {
-    header("Location: " . "../userSignUp.php" . '?error=error');
+  if ($resultEmail) {
+    header("Location: " . "../userSignUp.php" . '?error=errorEmail');
+    // header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+  }
+
+  // Check If The Username Is Already Registered
+  $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = :email");
+  $stmt->bindParam(':email', $email);
+  $stmt->execute();
+  $resultUsername = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  if ($resultUsername) {
+    header("Location: " . "../userSignUp.php" . '?error=errorEmail');
     // header("Location: " . $_SERVER['PHP_SELF']);
     exit;
   }
 
   // Insert new user
-  $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, password) 
-  VALUES (:firstName, :lastName, :email, :password)");
+  $stmt = $conn->prepare("INSERT INTO users ( full_name, job_title, email, password) 
+  VALUES ( :fullname, :jobTitle, :email, :password)");
 
-  $stmt->bindParam(':firstName', $firstName);
-  $stmt->bindParam(':lastName', $lastname);
+  // $stmt->bindParam(':username', $userName);
+  $stmt->bindParam(':fullname', $fullName);
+  $stmt->bindParam(':jobTitle', $jobTitle);
   $stmt->bindParam(':email', $email);
   $stmt->bindParam(':password', $password);
 

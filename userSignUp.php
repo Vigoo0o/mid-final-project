@@ -1,9 +1,9 @@
 <?php
-  if (isset($_GET['error']) && $_GET['error'] == 'error') {
+  if (isset($_GET['error']) && $_GET['error'] == 'errorEmail') {
     echo '<div id="popup" style="background:#F44336; color: white; padding: 15px; text-align: center;">
     Email already exists.
     </div>';
-  }
+  } 
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
         <div class="d-flex align-items-center">
           <div class="logo">
             <a href="./index.html">
-              <img class="logo" src="./images/logo.png" alt="logo" />
+              <img class="logo" src="./images/logo/logo.png" alt="logo" />
             </a>
           </div>
         </div>
@@ -69,6 +69,18 @@
           />
         </div>
       </div>
+
+      <div class="form-group mb-1">
+        <label for="jobTitle">job Title</label>
+        <input
+          type="text"
+          class="jobTitleInbut form-control"
+          id="jobTitle"
+          placeholder="Job Title"
+          name="jobTitle"
+        />
+      </div>
+
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input

@@ -150,6 +150,7 @@ ul {
   margin-top: 50px;
   gap: 40px;
   position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 1200px) {

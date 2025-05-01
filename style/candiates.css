@@ -1,46 +1,46 @@
-.page .body .content .results .result .image {
+.result .image {
   margin-right: 15px;
 }
 
-.page .body .content .results .result .image img {
+.result .image img {
   width: 100px;
 }
 
-.page .body .content .results .result .info {
+.result .info {
   width: 100%;
 }
 
-.page .body .content .results .result .info .row1 {
+.result .info .row1 {
   display: flex;
   gap: 15px;
   align-items: center;
 }
 
-.page .body .content .results .result .info .row1:not(:last-child) {
+.result .info .row1:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.page .body .content .results .result .info .row1 .keywords {
+.result .info .row1 .keywords {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.page .body .content .results .result .info .row1 .keywords .word {
+.result .info .row1 .keywords .word {
   background-color: #f3f4f6ff;
   padding: 5px;
   border-radius: 5px;
   font-size: 11px;
 }
 
-.page .body .content .results .result .info .row1 .name {
+.result .info .row1 .name {
   font-size: 18px;
   line-height: 28px;
   font-weight: 700;
   color: #171a1fff;
 }
 
-.page .body .content .results .result .info .row1 .tags {
+.result .info .row1 .tags {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,7 +50,7 @@
   font-weight: 400;
 }
 
-.page .body .content .results .result .info .row1 .tags .tag.openToWork {
+.result .info .row1 .tags .tag.openToWork {
   padding: 3px 5px 3px 25px;
   display: flex;
   align-items: center;
@@ -61,7 +61,7 @@
   color: #ff832bff;
 }
 
-.page .body .content .results .result .info .row1 .tags .tag.openToWork i {
+.result .info .row1 .tags .tag.openToWork i {
   position: absolute;
   font-size: 15px;
   /* height: 16px; */
@@ -69,7 +69,7 @@
   left: 5px;
 }
 
-.page .body .content .results .result .info .row1 .liveIn {
+.result .info .row1 .liveIn {
   font-size: 12px;
   line-height: 20px;
   font-weight: 400;
@@ -78,7 +78,7 @@
   padding-right: 10px;
 }
 
-.page .body .content .results .result .info .row1 .jobTitle {
+.result .info .row1 .jobTitle {
   /* font-size: 12px; */
   line-height: 20px;
   font-weight: 400;

@@ -13,7 +13,7 @@
       <div class="container d-flex justify-content-between align-items-center">
         <div class="logo">
           <a href="./index.html">
-            <img class="logo" src="./images/logo.png" alt="logo" />
+            <img class="logo" src="./images/logo/logo.png" alt="logo" />
           </a>
         </div>
       </div>
@@ -41,17 +41,6 @@
           class="form-control"
           placeholder="Enter industry type"
           name="industry"
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="contactPerson">Contact Person</label>
-        <input
-          id="contactPerson"
-          type="text"
-          class="form-control"
-          placeholder="Enter contact person's name"
-          name="contact"
         />
       </div>
 

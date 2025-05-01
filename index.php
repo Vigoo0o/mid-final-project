@@ -1,6 +1,19 @@
 <?php
+  include './db.php';
   include './error.php';
+  include './components.php';
   session_start();
+
+
+  $query = "SELECT COUNT(*) AS open_jobs_count
+            FROM jobs
+            WHERE status = 'Open'";
+
+
+  $stmt = $conn->prepare($query);
+  $stmt->execute();
+  $jobsCoutn = $stmt->fetch();
+
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +34,22 @@
     <link rel="stylesheet" href="./style/bootstrap.min.css" />
     <link rel="stylesheet" href="./style/home.css" />
     <link rel="stylesheet" href="./style/main.css" />
+    <style>
+      .slider-wrapper {
+  overflow: hidden;
+  width: 1060px; /* 250px * 4 كروت + 3 فراغات gap تقريبًا */
+}
+
+.sliderTrack {
+  display: flex;
+  gap: 14px;
+  transition: transform 0.5s ease;
+}
+
+    </style>
+
   </head>
   <body>
-    
     <div
       class="modal fade"
       id="chooseTypeModal"
@@ -64,114 +90,47 @@
       <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
           <div class="logo">
-            <a href="./index.html">
-              <img class="logo" src="./images/logo.png" alt="logo" />
+            <a href="./index.php">
+              <img class="logo" src="./images/logo/logo.png" alt="logo" />
             </a>
           </div>
-          <ul class="links list-unstyled m-0 d-none d-lg-flex">
-            <li><a class="active" href="./index.html">Home</a></li>
-            <li><a href="./alljobs.html">All Jobs</a></li>
-            <li><a href="./company.html ">Companies</a></li>
-            <li><a href="./candiates.html">People</a></li>
-            <li><a href="./suggestions.html">Suggestions</a></li>
+            <ul class="links list-unstyled m-0 d-none d-lg-flex">
+            <li><a class="active" href="./index.php">Home</a></li>
+            <li><a href="./alljobs.php">All Jobs</a></li>
+            <li><a href="./company.php ">Companies</a></li>
+            <li><a href="./candiates.php">People</a></li>
+            <li><a href="./suggestions.php">Suggestions</a></li>
           </ul>
         </div>
-        <!-- <div class="icons d-flex align-items-center justify-content-between">
-          <a class="notification-icon" href="./notifications.html">
-            <i class="fa-regular fa-bell"></i>
-          </a>
-          <a
-            class="profile-icon d-flex justify-content-between align-items-center"
-            href="./profile.html"
-          >
-            <img
-              class="profile-image"
-              src="./images/profile-image.png"
-              alt=""
-            />
-            <i class="fa-solid fa-chevron-down"></i>
-          </a>
-        </div> -->
-        
-        <?php 
-        if(!isset($_SESSION['user_type'])): ?>
-          <div class="loginAndRegister d-flex align-items-center justify-content-between gap-2">
-            <button
-              type="button"
-              class="login-btn btn"
-              onclick="openPopup('login')"
-              data-bs-toggle="modal"
-              data-bs-target="#chooseTypeModal"
-            >
-              Login
-            </button>
-
-            <button
-              type="button"
-              class="register-btn btn"
-              onclick="openPopup('register')"
-              data-bs-toggle="modal"
-              data-bs-target="#chooseTypeModal"
-            >
-              Register
-            </button>
-          </div>
-      <?php else: ?>
-        <p>Welcome, 
-          <?php
-              if ($_SESSION['user_type'] == 'user') {
-                echo $_SESSION['user_firstName'] . ' ' . $_SESSION['user_lastName'];
-              } else {
-                echo $_SESSION['company_name'];
-              }
+        <div class="d-flex align-items-center justify-content-between gap-3">
+          <?php 
+            renderAuthButtons();
           ?>
-        </p>
-      <?php endif; ?>
-
-
-        <!-- <div class="burgerIcon d-none">
-          <i class="fa-solid fa-bars"></i>
-        </div> -->
-
-        <div class="dropdown d-block d-lg-none">
-          <button class="btn" type="button" data-bs-toggle="dropdown">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" class="active" href="./index.html"
-                >Home</a
-              >
-            </li>
-            <li><a class="dropdown-item" href="./alljobs.html">All Jobs</a></li>
-            <li>
-              <a class="dropdown-item" href="./company.html ">Companies</a>
-            </li>
-            <li><a class="dropdown-item" href="./candiates.html">People</a></li>
-            <li>
-              <a class="dropdown-item" href="./suggestions.html">Suggestions</a>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="login-btn btn"
-                onclick="openPopup('login')"
-                data-bs-toggle="modal"
-                data-bs-target="#chooseTypeModal"
-              >
-                Login
-              </button>
-              <button
-                type="button"
-                class="register-btn btn"
-                onclick="openPopup('register')"
-                data-bs-toggle="modal"
-                data-bs-target="#chooseTypeModal"
-              >
-                Register
-              </button>
-            </li>
-          </ul>
+          <div class="dropdown d-block d-lg-none">
+            <button class="btn" type="button" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" class="active" href="./index.html"
+                  >Home</a
+                >
+              </li>
+              <li><a class="dropdown-item" href="./alljobs.php">All Jobs</a></li>
+              <li>
+                <a class="dropdown-item" href="./company.php ">Companies</a>
+              </li>
+              <li><a class="dropdown-item" href="./candiates.php">People</a></li>
+              <li>
+                <a class="dropdown-item" href="./suggestions.php">Suggestions</a>
+              </li>
+              <!-- <li>
+                <?php 
+                 // renderAuthButtons();
+                ?>
+              </li> -->
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -180,24 +139,24 @@
         class="container h-100 d-flex justify-content-between align-items-center"
       >
         <div class="info">
-          <h1><span class="numberOfJobs">16,780 Jobs</span> For You</h1>
+          <h1><span class="numberOfJobs"><?php echo $jobsCoutn['open_jobs_count'] ?> Jobs</span> For You</h1>
           <p>
             Non enim eu excepteur cupidatat consectetur do ea est reprehenderit
             incididunt irure veniam cupidatat est non amet. Enim duis aute
             tempor laboris ipsum dolore non.
           </p>
-          <a class="btn btn-primary" href="./alljobs.html">Explore now</a>
+          <a class="btn btn-primary" href="./alljobs.php">Explore now</a>
         </div>
         <div class="shape">
-          <img class="person1" src="./images/shapeImage1.png" alt="" />
-          <img class="person2" src="./images/shapeImage2.png" alt="" />
-          <img class="statistic2" src="./images/shapeImage3.png" alt="" />
-          <img class="statistic1" src="./images/shapeImage4.png" alt="" />
-          <img class="locationIcon" src="./images/shapeImage5.png" alt="" />
+          <img class="person1" src="./images/homeScreenShape/shapeImage1.png" alt="" />
+          <img class="person2" src="./images/homeScreenShape/shapeImage2.png" alt="" />
+          <img class="statistic2" src="./images/homeScreenShape/shapeImage3.png" alt="" />
+          <img class="statistic1" src="./images/homeScreenShape/shapeImage4.png" alt="" />
+          <img class="locationIcon" src="./images/homeScreenShape/shapeImage5.png" alt="" />
         </div>
       </div>
     </div>
-    <div class="jobExplore">
+      <div class="jobExplore">
       <div class="container">
         <div class="headTitel">
           Explore More
@@ -207,52 +166,97 @@
           <input class="border-0" type="search" name="jobSearch" id="" />
           <button class="border-0" type="button">Search</button>
         </form>
-        <div
-          class="slider-container categoresSlider d-flex justify-content-center align-items-center"
-        >
+        <?php 
+          $colors = [
+            "#ecfdfc",
+            "#fff6f0",
+            "#f6f1fd",
+            "#fdf1fd"
+          ];
+
+          $query = "SELECT 
+              c.category_id, 
+              c.category_name, 
+              c.icon_url, 
+              COUNT(j.job_id) AS jobs_count
+          FROM 
+              categories c
+          LEFT JOIN 
+              jobs j ON c.category_id = j.category_id
+          GROUP BY 
+              c.category_id, c.category_name, c.icon_url
+          ORDER BY 
+              c.category_name ASC";
+
+          $stmt = $conn->prepare($query);
+          $stmt->execute();
+          $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+        <div class="slider-container categoresSlider d-flex justify-content-center align-items-center">
           <i class="fa-solid fa-angle-left" id="prevBtn"></i>
-          <a href="./categories.html">
-            <div class="categore" style="background-color: #ecfdfc">
-              <div
-                class="icon d-flex justify-content-center align-items-center"
-              >
-                <img src="./images/financeCategory.png" alt="" />
-              </div>
-              <div class="categoreName">Finance</div>
-              <span><span class="countOfJobs">5768</span> jobs</span>
+
+          <div class="slider-wrapper">
+            <div class="sliderTrack" >
+
+              <?php foreach ($categories as $index => $cat): ?>
+                <?php $color = $colors[$index % count($colors)]; ?>
+                <a href="./categories.html">
+                  <div class="categore" style="background-color: <?= $color ?>; width: 250px;">
+                    <div class="categoreName"><?= htmlspecialchars($cat['category_name']) ?></div>
+                    <span><span class="countOfJobs"><?= (int)$cat['jobs_count'] ?></span> jobs</span>
+                  </div>
+                </a>
+              <?php endforeach; ?>
+
             </div>
-          </a>
-          <a href="./categories.html">
-            <div class="categore" style="background-color: #fff6f0">
-              <div class="icon">
-                <img src="./images/educationCategory.png" alt="" />
-              </div>
-              <div class="categoreName">Education</div>
-              <span><span class="countOfJobs">5768</span> jobs</span>
-            </div>
-          </a>
-          <a href="./categories.html">
-            <div class="categore" style="background-color: #f6f1fd">
-              <div class="icon">
-                <img src="./images/itCategory.png" alt="" />
-              </div>
-              <div class="categoreName">IT</div>
-              <span><span class="countOfJobs">5768</span> jobs</span>
-            </div>
-          </a>
-          <a href="./categories.html">
-            <div class="categore" style="background-color: #fdf1fd">
-              <div class="icon">
-                <img src="./images/marketingCategory.png" alt="" />
-              </div>
-              <div class="categoreName">Marketing</div>
-              <span><span class="countOfJobs">5768</span> jobs</span>
-            </div>
-          </a>
+          </div>
+
           <i class="fa-solid fa-angle-right" id="nextBtn"></i>
         </div>
       </div>
     </div>
+    <script>
+      const sliderTrack = document.querySelector('.sliderTrack');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      let currentPosition = 0;
+      const cardWidth = 264;
+      const visibleCards = 4;
+
+      nextBtn.addEventListener('click', () => {
+        const totalCards = document.querySelectorAll('.sliderTrack > a').length;
+        const maxPosition = totalCards - visibleCards;
+
+        if (currentPosition < maxPosition) {
+          currentPosition++;
+          sliderTrack.style.transform = `translateX(-${cardWidth * currentPosition}px)`;
+        }
+      });
+
+      prevBtn.addEventListener('click', () => {
+        if (currentPosition > 0) {
+          currentPosition--;
+          sliderTrack.style.transform = `translateX(-${cardWidth * currentPosition}px)`;
+        }
+      });
+    </script>
+    <?php
+      $sql = "
+        SELECT 
+            j.*, 
+            c.company_name AS company_name, 
+            c.logo_url AS company_logo
+        FROM jobs j
+        JOIN companies c ON j.company_id = c.company_id
+        WHERE j.status = 'Open'
+        ORDER BY j.posted_at DESC
+        LIMIT 6 ";
+
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $jobs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      ?>
     <div class="latestJobs">
       <div class="container">
         <div class="headTitel">
@@ -260,190 +264,65 @@
           <p>Exercitation dolore reprehender it fugi</p>
         </div>
         <div class="jobs">
-          <div class="job">
-            <div class="head">
-              <div class="image">
-                <img src="./images/companyLogo1.png" alt="" />
-              </div>
-              <div class="jobDetails">
-                <div class="jobTitle">UI / UX Designer</div>
-                <div class="jobSalaryExpected">$95K - $120K</div>
-              </div>
-              <div class="tag"><span>Hot</span></div>
-            </div>
-            <div class="body">
-              <div class="details">
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-building"></i></div>
-                  <span>Laborum</span>
+          <?php foreach ($jobs as $job): ?>
+              <a href="jobDetails.php?id=<?= $job['job_id'] ?>" style="text-decoration: none; color: inherit;">
+
+            <div class="job">
+              <div class="head">
+                <div class="image">
+                  <img src="<?= htmlspecialchars($job['company_logo'] ?? './images/default/defaultCompanyLogo.png')?> " alt="<?= htmlspecialchars($job['company_name']) ?>" />
                 </div>
-                <div class="detail">
-                  <div class="icon">
-                    <i class="fa-solid fa-location-dot"></i>
+                <div class="jobDetails">
+                  <div class="jobTitle"><?= htmlspecialchars($job['title']) ?></div>
+                  <div class="jobSalaryExpected">
+                    <?= $job['salary'] ? "$" . $job['salary']  : "Negotiable" ?>
                   </div>
-                  <span>Tucson, Az</span>
                 </div>
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-bookmark"></i></div>
-                  <span>Onsite</span>
-                </div>
+                <?php if (strtolower($job['employment_type']) == 'full-time'): ?>
+                  <div class="tag"><span>Hot</span></div>
+                <?php endif; ?>
               </div>
-            </div>
-          </div>
-          <div class="job">
-            <div class="head">
-              <div class="image">
-                <img src="./images/companyLogo2.png" alt="" />
-              </div>
-              <div class="jobDetails">
-                <div class="jobTitle">UI / UX Designer</div>
-                <div class="jobSalaryExpected">$95K - $120K</div>
-              </div>
-              <div class="tag"><span>Hot</span></div>
-            </div>
-            <div class="body">
-              <div class="details">
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-building"></i></div>
-                  <span>Laborum</span>
-                </div>
-                <div class="detail">
-                  <div class="icon">
-                    <i class="fa-solid fa-location-dot"></i>
+              <div class="body">
+                <div class="details">
+                  <div class="detail">
+                    <div class="icon"><i class="fa-solid fa-building"></i></div>
+                    <span><?= htmlspecialchars($job['company_name']) ?></span>
                   </div>
-                  <span>Tucson, Az</span>
-                </div>
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-bookmark"></i></div>
-                  <span>Onsite</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="job">
-            <div class="head">
-              <div class="image">
-                <img src="./images/companyLogo3.png" alt="" />
-              </div>
-              <div class="jobDetails">
-                <div class="jobTitle">UI / UX Designer</div>
-                <div class="jobSalaryExpected">$95K - $120K</div>
-              </div>
-              <!-- <div class="tag"><span>Hot</span></div> -->
-            </div>
-            <div class="body">
-              <div class="details">
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-building"></i></div>
-                  <span>Laborum</span>
-                </div>
-                <div class="detail">
-                  <div class="icon">
-                    <i class="fa-solid fa-location-dot"></i>
+                  <div class="detail">
+                    <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <span><?= htmlspecialchars($job['location']) ?></span>
                   </div>
-                  <span>Tucson, Az</span>
-                </div>
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-bookmark"></i></div>
-                  <span>Onsite</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="job">
-            <div class="head">
-              <div class="image">
-                <img src="./images/companyLogo4.png" alt="" />
-              </div>
-              <div class="jobDetails">
-                <div class="jobTitle">UI / UX Designer</div>
-                <div class="jobSalaryExpected">$95K - $120K</div>
-              </div>
-              <div class="tag"><span>Hot</span></div>
-            </div>
-            <div class="body">
-              <div class="details">
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-building"></i></div>
-                  <span>Laborum</span>
-                </div>
-                <div class="detail">
-                  <div class="icon">
-                    <i class="fa-solid fa-location-dot"></i>
+                  <div class="detail">
+                    <div class="icon"><i class="fa-solid fa-bookmark"></i></div>
+                    <span><?= htmlspecialchars($job['employment_type']) ?></span>
                   </div>
-                  <span>Tucson, Az</span>
-                </div>
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-bookmark"></i></div>
-                  <span>Onsite</span>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="job">
-            <div class="head">
-              <div class="image">
-                <img src="./images/companyLogo5.png" alt="" />
-              </div>
-              <div class="jobDetails">
-                <div class="jobTitle">UI / UX Designer</div>
-                <div class="jobSalaryExpected">$95K - $120K</div>
-              </div>
-            </div>
-            <div class="body">
-              <div class="details">
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-building"></i></div>
-                  <span>Laborum</span>
-                </div>
-                <div class="detail">
-                  <div class="icon">
-                    <i class="fa-solid fa-location-dot"></i>
-                  </div>
-                  <span>Tucson, Az</span>
-                </div>
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-bookmark"></i></div>
-                  <span>Onsite</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="job">
-            <div class="head">
-              <div class="image">
-                <img src="./images/companyLogo6.png" alt="" />
-              </div>
-              <div class="jobDetails">
-                <div class="jobTitle">UI / UX Designer</div>
-                <div class="jobSalaryExpected">$95K - $120K</div>
-              </div>
-            </div>
-            <div class="body">
-              <div class="details">
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-building"></i></div>
-                  <span>Laborum</span>
-                </div>
-                <div class="detail">
-                  <div class="icon">
-                    <i class="fa-solid fa-location-dot"></i>
-                  </div>
-                  <span>Tucson, Az</span>
-                </div>
-                <div class="detail">
-                  <div class="icon"><i class="fa-solid fa-bookmark"></i></div>
-                  <span>Onsite</span>
-                </div>
-              </div>
-            </div>
-          </div>
+            </a>
+          <?php endforeach; ?>
         </div>
+        <a href="./alljobs.php">
+          <button type="button" class="btn btn-primary">See More</button>
+        </a>
       </div>
-      <a href="./alljobs.html">
-        <button type="button" class="btn btn-primary">See More</button>
-      </a>
     </div>
+
+    <?php
+      $sql = "
+        SELECT 
+          user_id, 
+          full_name, 
+          job_title, 
+          profile_picture_url, 
+          resume_url 
+        FROM users 
+        LIMIT 3";
+
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $usersWithCV = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    ?>
     <div class="cvs">
       <div class="container">
         <div class="headTitel">
@@ -451,67 +330,43 @@
           <p>Exercitation dolore reprehender it fugi</p>
         </div>
         <div class="content">
-          <a href="./profile.html">
-            <!-- <div class="cv">
-              <div class="image"><img src="./images/cv1.png" alt="" /></div>
-              <div class="info">
-                <div class="profile">
-                  Profile: <span class="name">Vigo</span>
+          <?php foreach ($usersWithCV as $user): ?>
+            <a href="./profile.php?user_id=<?= $user['user_id'] ?>">
+              <div class="cv">
+                <div class="image">
+                  <img 
+                    src="<?= htmlspecialchars($user['profile_picture_url'] ?? './images/default/defaultUserLogo.jpg') ?>" 
+                    alt="<?= htmlspecialchars($user['full_name']) ?>" 
+                    width="100%" height="100%"/>
                 </div>
-                <div class="jogTitle">
-                  Job Title: <span class="title">Software Engnnering</span>
+                <div class="info">
+                  <div class="profile">
+                    Profile: <span class="name"><?= htmlspecialchars($user['full_name']) ?></span>
+                  </div>
+                  <div class="jogTitle">
+                    Job Title: <span class="title"><?= htmlspecialchars($user['job_title']) ?></span>
+                  </div>
                 </div>
-                <div class="ex">Experience: <span>5 years in IT</span></div>
-                <div class="readIn">15 mins read</div>
               </div>
-            </div> -->
-          </a>
-          <a href="./profile.html">
-            <div class="cv">
-              <div class="image"><img src="./images/cv2.png" alt="" /></div>
-              <div class="info">
-                <div class="profile">
-                  Profile: <span class="name">Vigo</span>
-                </div>
-                <div class="jogTitle">
-                  Job Title: <span class="title">Software Engnnering</span>
-                </div>
-                <div class="ex">Experience: <span>5 years in IT</span></div>
-                <div class="readIn">15 mins read</div>
-              </div>
-            </div>
-          </a>
-          <a href="./profile.html">
-            <div class="cv">
-              <div class="image"><img src="./images/cv3.png" alt="" /></div>
-              <div class="info">
-                <div class="profile">
-                  Profile: <span class="name">Vigo</span>
-                </div>
-                <div class="jogTitle">
-                  Job Title: <span class="title">Software Engnnering</span>
-                </div>
-                <div class="ex">Experience: <span>5 years in IT</span></div>
-                <div class="readIn">15 mins read</div>
-              </div>
-            </div>
-          </a>
+            </a>
+          <?php endforeach; ?>
         </div>
-        <a href="./candiates.html">
+        <a href="candiates.php">
           <button type="button" class="btn btn-primary">See More</button>
         </a>
       </div>
     </div>
+
     <footer>
       <div class="footer-logo">
-        <img src="./images/logo.png" alt="#" />
+        <img src="./images/logo/logo.png" alt="#" />
       </div>
       <div class="footer-section">
         <h3>Product</h3>
         <ul>
-          <li><a href="./alljobs.html">All Jobs</a></li>
-          <li><a href="#">Companies</a></li>
-          <li><a href="./candiates.html">Candidates</a></li>
+          <li><a href="./alljobs.php">All Jobs</a></li>
+          <li><a href="./company.php">Companies</a></li>
+          <li><a href="./candiates.php">Candidates</a></li>
         </ul>
       </div>
       <div class="footer-section">

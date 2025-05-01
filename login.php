@@ -41,7 +41,7 @@
         <div class="d-flex align-items-center">
           <div class="logo">
             <a href="./index.html">
-              <img class="logo" src="./images/logo.png" alt="logo" />
+              <img class="logo" src="./images/logo/logo.png" alt="logo" />
             </a>
           </div>
           <!-- <ul class="links list-unstyled d-flex m-0">

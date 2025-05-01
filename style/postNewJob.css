@@ -33,7 +33,7 @@
 }
 
 .page .container .sidebar {
-  max-width: 270px;
+  min-width: 280px;
 }
 
 .page .container .sidebar .postJobTag {
@@ -181,4 +181,8 @@
   border-width: 1px;
   border-color: #9095a0ff;
   border-style: solid;
+}
+
+.checkPost {
+  padding: 5px;
 }
