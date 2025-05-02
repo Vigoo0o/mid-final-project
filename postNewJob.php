@@ -28,9 +28,9 @@
       <div class="container">
         <div class="head d-flex align-items-center justify-content-between">
           <h2>Post a new job</h2>
-          <button class="btn btn-primary">
+          <!-- <button class="btn btn-primary">
             <i class="fa-solid fa-eye"></i><span>Preview</span>
-          </button>
+          </button> -->
         </div>
         <div class="content d-flex justify-content-between">
           <div class="sidebar">

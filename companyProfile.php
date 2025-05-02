@@ -34,15 +34,13 @@
   }
   
   // $companyId = $_SESSION['company_id'];
+
+  // Check if company viwed hsi profile or view other company profile
   if (isset($_GET['company_id'])) {
-    // سعرض ملف شركة محددة عن طريق ID في الرابط
     $companyId = $_GET['company_id'];
   } else {
-    // عرض ملف الشركة المسجَّل بها المستخدم حاليًا
     $companyId = $_SESSION['company_id'];
   }
-
-
 
   $query = "SELECT company_name, description, why_choose, industry, address, website FROM companies WHERE company_id = ?";
   $stmt = $conn->prepare($query);
@@ -220,7 +218,7 @@
             <?php
               // $companyId = $_SESSION['company_id'];
 
-              $query = "SELECT jobs.title, jobs.salary, companies.company_name, jobs.location, jobs.employment_type
+              $query = "SELECT jobs.title, jobs.salary, companies.company_name, companies.logo_url, jobs.location, jobs.employment_type
                 FROM jobs
                 INNER JOIN companies ON jobs.company_id = companies.company_id
                 WHERE jobs.company_id = ?
@@ -230,6 +228,10 @@
               $stmt = $conn->prepare($query);
               $stmt->execute([$companyId]);
               $jobs = $stmt->fetchAll();
+
+              // echo '<pre>';
+              // print_r($jobs);
+              // echo '</pre>';
             ?>
             <div class="jobs">
               <?php if (count($jobs) == 0) echo 'No Jobs Added Recently!';?>
@@ -237,7 +239,7 @@
                 <div class="job">
                   <div class="head">
                     <div class="image">
-                      <img src="./images/companyLogo3.png" alt="" /> <!-- هنا ممكن تحط اللوجو من اللوجو_url لو حبيت -->
+                      <img src="<?= $job['logo_url'] ?>" alt="" /> 
                     </div>
                     <div class="jobDetails">
                       <div class="jobTitle"><?= htmlspecialchars($job['title']) ?></div>
@@ -269,19 +271,6 @@
             echo '<a href="./recentJobOpenings.php" class="btn" style="background-color: #0ea89b; margin: 50px auto 0; display: block; width: fit-content; color: white; font-weight: 600;">See More</a>'; 
           }?>
           </div>
-        <!-- </div>
-        <div class="overall-reating">
-          <div class="upgrade-box">
-            <div class="text-content">
-              <h3>Unlock more company insights</h3>
-              <p>Laboreum est minim id eiusmod</p>
-              <button>Upgrade to Premium</button>
-            </div>
-            <div class="image-content">
-              <img src="images/sideparShape.png" alt="Illustration" />
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
     <?php if (!isset($_GET['company_id'])) {

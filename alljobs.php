@@ -36,6 +36,12 @@
     $params[] = $jobType;
   }
 
+  if (!empty($_GET['category_id'])) {
+    $category_id = $_GET['category_id'];
+    $query .= " AND jobs.category_id = ?";
+    $params[] = $category_id;
+  }
+
   $stmt = $conn->prepare($query);
   $stmt->execute($params);
 
@@ -112,56 +118,43 @@
               <img class="logo" src="./images/logo/logo.png" alt="logo" />
             </a>
           </div>
-                     <ul class="links list-unstyled m-0 d-none d-lg-flex">
-            <li><a  href="./index.php">Home</a></li>
-            <li><a class="active" href="./alljobs.php">All Jobs</a></li>
+            <ul class="links list-unstyled m-0 d-none d-lg-flex">
+            <li><a class="active" href="./index.php">Home</a></li>
+            <li><a href="./alljobs.php">All Jobs</a></li>
             <li><a href="./company.php ">Companies</a></li>
             <li><a href="./candiates.php">People</a></li>
             <li><a href="./suggestions.php">Suggestions</a></li>
           </ul>
         </div>
-        <?php 
-          renderAuthButtons();
-        ?>
-        <div class="dropdown d-block d-lg-none">
-          <button class="btn" type="button" data-bs-toggle="dropdown">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" class="active" href="./index.html"
-                >Home</a
-              >
-            </li>
-            <li><a class="dropdown-item" href="./alljobs.html">All Jobs</a></li>
-            <li>
-              <a class="dropdown-item" href="./company.html ">Companies</a>
-            </li>
-            <li><a class="dropdown-item" href="./candiates.html">People</a></li>
-            <li>
-              <a class="dropdown-item" href="./suggestions.html">Suggestions</a>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="login-btn btn"
-                onclick="openPopup('login')"
-                data-bs-toggle="modal"
-                data-bs-target="#chooseTypeModal"
-              >
-                Login
-              </button>
-              <button
-                type="button"
-                class="register-btn btn"
-                onclick="openPopup('register')"
-                data-bs-toggle="modal"
-                data-bs-target="#chooseTypeModal"
-              >
-                Register
-              </button>
-            </li>
-          </ul>
+        <div class="d-flex align-items-center justify-content-between gap-3">
+          <?php 
+            renderAuthButtons();
+          ?>
+          <div class="dropdown d-block d-lg-none">
+            <button class="btn" type="button" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item"  href="./index.php"
+                  >Home</a
+                >
+              </li>
+              <li><a class="dropdown-item active" href="./alljobs.php">All Jobs</a></li>
+              <li>
+                <a class="dropdown-item" href="./company.php ">Companies</a>
+              </li>
+              <li><a class="dropdown-item" href="./candiates.php">People</a></li>
+              <li>
+                <a class="dropdown-item" href="./suggestions.php">Suggestions</a>
+              </li>
+              <!-- <li>
+                <?php 
+                 // renderAuthButtons();
+                ?>
+              </li> -->
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -238,9 +231,6 @@
         </div>
         <div class="body">
           <div class="content">
-            <!-- <div class="totalResult">
-            32 results for <span>'Designer'</span>
-            </div> -->
             <?php
               // $companyId = $_SESSION['company_id'];
 
@@ -352,8 +342,8 @@
       <div class="footer-section">
         <h3>Company</h3>
         <ul>
-          <li><a href="./aboutUs.html">About US</a></li>
-          <li><a href="./contactUs.html">Contact US</a></li>
+          <li><a href="./aboutUs.php">About US</a></li>
+          <li><a href="./contactUs.php">Contact US</a></li>
         </ul>
       </div>
       <div class="footer-subscribe">

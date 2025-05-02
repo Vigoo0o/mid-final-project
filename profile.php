@@ -191,12 +191,12 @@
                 </div>
           
                 <div class="Job">
-                  <h3>
+                  <!-- <h3>
                     <?= safe($exp['job_title']) ?>
                     <?php if (is_null($exp['end_date'])): ?>
                       <span class="Wor"><h2>Working</h2></span>
-                    <?php endif; ?>
-                  </h3>
+                    <?php  endif; ?>
+                  </h3> -->
 
                   <span><i class="fa-regular fa-bookmark"></i> Fulltime</span>
                   <span><i class="fa-solid fa-house"></i> <?= safe($exp['company_name']) ?></span>

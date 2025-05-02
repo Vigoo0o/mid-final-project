@@ -104,7 +104,7 @@
                 <div class="result">
                 <div class="image">
                 <img 
-                href="<?php echo $job['logo_url'] ?? './images/default/defaultCompanyLogo.png'; ?>" alt="Company Logo"
+                src="<?php echo $job['logo_url'] ?? './images/default/defaultCompanyLogo.png'; ?>" alt="Company Logo"
                 />
                 </div>
                 <div class="info">

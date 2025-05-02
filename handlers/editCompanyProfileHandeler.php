@@ -22,16 +22,17 @@ $profilePictureUrl = null;
 if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
     $fileTmp = $_FILES['profile_picture']['tmp_name'];
     $fileName = basename($_FILES['profile_picture']['name']);
-    $targetDir = "./uploads/";
+    $targetDir = "../uploads/";
     $targetPath = $targetDir . uniqid() . "_" . $fileName;
+    $path = substr($targetPath, 1);
 
-    // تأكد أن مجلد الرفع موجود
+    // confirm the file uploded
     if (!is_dir($targetDir)) {
         mkdir($targetDir, 0777, true);
     }
-
+    
     if (move_uploaded_file($fileTmp, $targetPath)) {
-        $profilePictureUrl = $targetPath;
+        $profilePictureUrl = $path;
     }
 }
 
@@ -58,7 +59,6 @@ try {
 
     $stmt->execute($params);
 
-    // Redirect بعد الحفظ
     header("Location: ../companyProfile.php?update=success");
     exit;
 

@@ -69,98 +69,47 @@
       <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
           <div class="logo">
-            <a href="./index.html">
+            <a href="./index.php">
               <img class="logo" src="./images/logo/logo.png" alt="logo" />
             </a>
           </div>
-          <ul class="links list-unstyled m-0 d-none d-lg-flex">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./alljobs.html">All Jobs</a></li>
-            <li><a href="./company.html ">Companies</a></li>
-            <li><a href="./candiates.html">People</a></li>
-            <li><a href="./suggestions.html">Suggestions</a></li>
+            <ul class="links list-unstyled m-0 d-none d-lg-flex">
+            <li><a class="active" href="./index.php">Home</a></li>
+            <li><a href="./alljobs.php">All Jobs</a></li>
+            <li><a href="./company.php ">Companies</a></li>
+            <li><a href="./candiates.php">People</a></li>
+            <li><a href="./suggestions.php">Suggestions</a></li>
           </ul>
         </div>
-        <!-- <div class="icons d-flex align-items-center justify-content-between">
-          <a class="notification-icon" href="./notifications.html">
-            <i class="fa-regular fa-bell"></i>
-          </a>
-          <a
-            class="profile-icon d-flex justify-content-between align-items-center"
-            href="./profile.html"
-          >
-            <img
-              class="profile-image"
-              src="./images/profile-image.png"
-              alt=""
-            />
-            <i class="fa-solid fa-chevron-down"></i>
-          </a>
-        </div> -->
-        <div
-          class="loginAndRegister d-flex align-items-center justify-content-between gap-2"
-        >
-          <button
-            type="button"
-            class="login-btn btn"
-            onclick="openPopup('login')"
-            data-bs-toggle="modal"
-            data-bs-target="#chooseTypeModal"
-          >
-            Login
-          </button>
-
-          <button
-            type="button"
-            class="register-btn btn"
-            onclick="openPopup('register')"
-            data-bs-toggle="modal"
-            data-bs-target="#chooseTypeModal"
-          >
-            Register
-          </button>
-        </div>
-        <!-- <div class="burgerIcon d-none">
-          <i class="fa-solid fa-bars"></i>
-        </div> -->
-
-        <div class="dropdown d-block d-lg-none">
-          <button class="btn" type="button" data-bs-toggle="dropdown">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="./index.html">Home</a>
-            </li>
-            <li><a class="dropdown-item" href="./alljobs.html">All Jobs</a></li>
-            <li>
-              <a class="dropdown-item" href="./company.html ">Companies</a>
-            </li>
-            <li><a class="dropdown-item" href="./candiates.html">People</a></li>
-            <li>
-              <a class="dropdown-item" href="./suggestions.html">Suggestions</a>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="login-btn btn"
-                onclick="openPopup('login')"
-                data-bs-toggle="modal"
-                data-bs-target="#chooseTypeModal"
-              >
-                Login
-              </button>
-              <button
-                type="button"
-                class="register-btn btn"
-                onclick="openPopup('register')"
-                data-bs-toggle="modal"
-                data-bs-target="#chooseTypeModal"
-              >
-                Register
-              </button>
-            </li>
-          </ul>
+        <div class="d-flex align-items-center justify-content-between gap-3">
+          <?php 
+            renderAuthButtons();
+          ?>
+          <div class="dropdown d-block d-lg-none">
+            <button class="btn" type="button" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" class="active" href="./index.html"
+                  >Home</a
+                >
+              </li>
+              <li><a class="dropdown-item" href="./alljobs.php">All Jobs</a></li>
+              <li>
+                <a class="dropdown-item" href="./company.php ">Companies</a>
+              </li>
+              <li><a class="dropdown-item" href="./candiates.php">People</a></li>
+              <li>
+                <a class="dropdown-item" href="./suggestions.php">Suggestions</a>
+              </li>
+              <!-- <li>
+                <?php 
+                 // renderAuthButtons();
+                ?>
+              </li> -->
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -215,9 +164,9 @@
       <div class="footer-section">
         <h3>Product</h3>
         <ul>
-          <li><a href="./alljobs.html">All Jobs</a></li>
+          <li><a href="./alljobs.php">All Jobs</a></li>
           <li><a href="#">Companies</a></li>
-          <li><a href="./candiates.html">Candidates</a></li>
+          <li><a href="./candiates.php">Candidates</a></li>
         </ul>
       </div>
       <div class="footer-section">

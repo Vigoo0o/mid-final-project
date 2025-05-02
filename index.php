@@ -3,17 +3,6 @@
   include './error.php';
   include './components.php';
   session_start();
-
-
-  $query = "SELECT COUNT(*) AS open_jobs_count
-            FROM jobs
-            WHERE status = 'Open'";
-
-
-  $stmt = $conn->prepare($query);
-  $stmt->execute();
-  $jobsCoutn = $stmt->fetch();
-
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +26,7 @@
     <style>
       .slider-wrapper {
   overflow: hidden;
-  width: 1060px; /* 250px * 4 كروت + 3 فراغات gap تقريبًا */
+  width: 1060px; 
 }
 
 .sliderTrack {
@@ -49,7 +38,6 @@
     </style>
 
   </head>
-  <body>
     <div
       class="modal fade"
       id="chooseTypeModal"
@@ -134,6 +122,17 @@
         </div>
       </div>
     </nav>
+    <?php
+      // Get Category Job Related Count
+      $query = "SELECT COUNT(*) AS open_jobs_count
+        FROM jobs
+        WHERE status = 'Open'";
+
+
+      $stmt = $conn->prepare($query);
+      $stmt->execute();
+      $jobsCoutn = $stmt->fetch();
+    ?>
     <div class="landing">
       <div
         class="container h-100 d-flex justify-content-between align-items-center"
@@ -162,10 +161,10 @@
           Explore More
           <div class="primaryWord">jobs</div>
         </div>
-        <form class="jobSearchForm text-center" action="">
+        <!-- <form class="jobSearchForm text-center" action="">
           <input class="border-0" type="search" name="jobSearch" id="" />
           <button class="border-0" type="button">Search</button>
-        </form>
+        </form> -->
         <?php 
           $colors = [
             "#ecfdfc",
@@ -174,11 +173,12 @@
             "#fdf1fd"
           ];
 
+          // Get Category Details
           $query = "SELECT 
               c.category_id, 
               c.category_name, 
               c.icon_url, 
-              COUNT(j.job_id) AS jobs_count
+              COUNT(CASE WHEN j.status != 'Closed' THEN 1 END) AS jobs_count
           FROM 
               categories c
           LEFT JOIN 
@@ -196,23 +196,22 @@
           <i class="fa-solid fa-angle-left" id="prevBtn"></i>
 
           <div class="slider-wrapper">
-            <div class="sliderTrack" >
-
+            <div class="sliderTrack">
               <?php foreach ($categories as $index => $cat): ?>
                 <?php $color = $colors[$index % count($colors)]; ?>
-                <a href="./categories.html">
+                <a href="./alljobs.php?category_id=<?= $cat['category_id'] ?>">
                   <div class="categore" style="background-color: <?= $color ?>; width: 250px;">
                     <div class="categoreName"><?= htmlspecialchars($cat['category_name']) ?></div>
                     <span><span class="countOfJobs"><?= (int)$cat['jobs_count'] ?></span> jobs</span>
                   </div>
                 </a>
               <?php endforeach; ?>
-
             </div>
           </div>
 
           <i class="fa-solid fa-angle-right" id="nextBtn"></i>
         </div>
+
       </div>
     </div>
     <script>
@@ -333,11 +332,11 @@
           <?php foreach ($usersWithCV as $user): ?>
             <a href="./profile.php?user_id=<?= $user['user_id'] ?>">
               <div class="cv">
-                <div class="image">
+                <div class="image text-center">
                   <img 
                     src="<?= htmlspecialchars($user['profile_picture_url'] ?? './images/default/defaultUserLogo.jpg') ?>" 
                     alt="<?= htmlspecialchars($user['full_name']) ?>" 
-                    width="100%" height="100%"/>
+                    width="200px" class="rounded-circle"/>
                 </div>
                 <div class="info">
                   <div class="profile">

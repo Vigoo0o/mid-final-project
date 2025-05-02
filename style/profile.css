@@ -121,6 +121,7 @@
 .profile-section img {
   width: 140px;
   margin-top: 40px;
+  border-radius: 50%;
 }
 .skills-section {
   font-size: 14px;

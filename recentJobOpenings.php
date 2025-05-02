@@ -140,7 +140,7 @@
             <?php
               $companyId = $_SESSION['company_id'];
 
-              $query = "SELECT jobs.title, jobs.salary, companies.company_name, jobs.location, jobs.employment_type, jobs.job_id
+              $query = "SELECT jobs.title, jobs.salary, companies.company_name, companies.logo_url, jobs.location, jobs.employment_type, jobs.job_id
                 FROM jobs
                 INNER JOIN companies ON jobs.company_id = companies.company_id
                 WHERE jobs.company_id = ?
@@ -225,9 +225,9 @@
       <div class="footer-section">
         <h3>Product</h3>
         <ul>
-          <li><a href="./alljobs.html">All Jobs</a></li>
+          <li><a href="./alljobs.php">All Jobs</a></li>
           <li><a href="#">Companies</a></li>
-          <li><a href="./candiates.html">Candidates</a></li>
+          <li><a href="./candiates.php">Candidates</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -242,7 +242,7 @@
         <h3>Company</h3>
         <ul>
           <li><a href="./aboutUs.html">About US</a></li>
-          <li><a href="./contactUs.html">Contact US</a></li>
+          <li><a href="./contactUs.php">Contact US</a></li>
         </ul>
       </div>
       <div class="footer-subscribe">

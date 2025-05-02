@@ -12,7 +12,7 @@
     <nav>
       <div class="container d-flex justify-content-between align-items-center">
         <div class="logo">
-          <a href="./index.html">
+          <a href="./index.php">
             <img class="logo" src="./images/logo/logo.png" alt="logo" />
           </a>
         </div>
@@ -72,7 +72,7 @@
 
       <div class="haveAcc">
         <p>Already have an account?</p>
-        <a href="./companyLogin.html">Login</a>
+        <a href="./companyLogin.php">Login</a>
       </div>
 
       <button type="submit" class="btn btn-primary">

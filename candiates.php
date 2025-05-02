@@ -175,9 +175,9 @@
         </div>
         <div class="body">
           <div class="content">
-            <div class="totalResult">
+            <!-- <div class="totalResult">
               32 results for <span>'Designer'</span>
-            </div>
+            </div> -->
 
             <?php
             if(empty($_GET)) {

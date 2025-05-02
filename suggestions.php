@@ -186,7 +186,7 @@
         <h3>Company</h3>
         <ul>
           <li><a href="./aboutUs.html">About US</a></li>
-          <li><a href="./contactUs.html">Contact US</a></li>
+          <li><a href="./contactUs.php">Contact US</a></li>
         </ul>
       </div>
       <div class="footer-subscribe">

@@ -40,7 +40,7 @@
       <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
           <div class="logo">
-            <a href="./index.html">
+            <a href="./index.php">
               <img class="logo" src="./images/logo/logo.png" alt="logo" />
             </a>
           </div>
