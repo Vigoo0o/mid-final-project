@@ -1,7 +1,7 @@
 <?php
   include 'auth.php';
   include './db.php';
-  include './error.php';
+  // include './error.php';
   // protectPage('company');
 
   if (session_status() === PHP_SESSION_NONE) {
