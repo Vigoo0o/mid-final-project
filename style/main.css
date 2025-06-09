@@ -530,7 +530,7 @@ footer div {
 .page .switchPage .pages {
 }
 
-.page .switchPage .pages button {
+.page .switchPage .pages a {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
@@ -541,7 +541,7 @@ footer div {
   padding: 6px 12px;
 }
 
-.page .switchPage .pages button.active {
+.switchPage .pages a.active {
   color: #ffffffff;
   background: #0b877cff;
 }

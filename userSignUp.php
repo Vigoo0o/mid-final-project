@@ -103,6 +103,8 @@
           id="exampleInputPassword1"
           placeholder="Password"
           name="password"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$"
+      title="Password must be at least 8 characters long, contain both upper and lower case letters, a number, and a special character."
         />
       </div>
       <div class="haveAcc">

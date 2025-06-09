@@ -1,55 +1,88 @@
 <?php
-  include './db.php';
-  include './error.php';
-  include './components.php';
-  
-  $query = "SELECT jobs.*, companies.company_name, categories.category_name, companies.logo_url
-            FROM jobs 
-            JOIN companies ON jobs.company_id = companies.company_id 
-            JOIN categories ON jobs.category_id = categories.category_id 
-            WHERE jobs.status != 'Closed'";
+  include_once './db.php';
+  include_once './error.php';
+  include_once './components.php';
 
+  $limit = 6;
+  $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
+  if ($page < 1) $page = 1;
+  $offset = ($page - 1) * $limit;
+
+  // Base query for counting total rows
+  $countQuery = "SELECT COUNT(*) 
+    FROM jobs 
+    WHERE status = 'Open'";
+  $countParams = [];
+
+  // Base query for fetching jobs
+  $query = "SELECT jobs.*, companies.company_name, categories.category_name, companies.logo_url
+    FROM jobs 
+    JOIN companies ON jobs.company_id = companies.company_id 
+    JOIN categories ON jobs.category_id = categories.category_id 
+    WHERE jobs.status = 'Open'";
   $params = [];
 
+  // Apply filters to both count and main query
   if (!empty($_GET['search'])) {
     $keyword = "%" . $_GET['search'] . "%";
     $query .= " AND (jobs.title LIKE ? OR jobs.description LIKE ?)";
+    $countQuery .= " AND (jobs.title LIKE ? OR jobs.description LIKE ?)";
     $params[] = $keyword;
     $params[] = $keyword;
+    $countParams[] = $keyword;
+    $countParams[] = $keyword;
   }
 
   if (!empty($_GET['location'])) {
     $location = "%" . $_GET['location'] . "%";
     $query .= " AND jobs.location LIKE ?";
+    $countQuery .= " AND jobs.location LIKE ?";
     $params[] = $location;
+    $countParams[] = $location;
   }
 
   if (!empty($_GET['industry'])) {
     $industry = $_GET['industry'];
     $query .= " AND jobs.category_id = ?";
+    $countQuery .= " AND jobs.category_id = ?";
     $params[] = $industry;
+    $countParams[] = $industry;
   }
 
   if (!empty($_GET['employment_type'])) {
     $jobType = $_GET['employment_type'];
     $query .= " AND jobs.employment_type = ?";
+    $countQuery .= " AND jobs.employment_type = ?";
     $params[] = $jobType;
+    $countParams[] = $jobType;
   }
 
   if (!empty($_GET['category_id'])) {
     $category_id = $_GET['category_id'];
     $query .= " AND jobs.category_id = ?";
+    $countQuery .= " AND jobs.category_id = ?";
     $params[] = $category_id;
+    $countParams[] = $category_id;
   }
 
+  // Add sorting and pagination to main query
+  $query .= " ORDER BY jobs.posted_at DESC LIMIT ? OFFSET ?";
+  $params[] = $limit;
+  $params[] = $offset;
+
+  // Execute count query
+  $countStmt = $conn->prepare($countQuery);
+  $countStmt->execute($countParams);
+  $totalRows = $countStmt->fetchColumn();
+  $totalPages = ceil($totalRows / $limit);
+
+  // Prepare and execute main query
   $stmt = $conn->prepare($query);
-  $stmt->execute($params);
-
-  $jobs = $stmt->fetchAll();
-
-  // echo '<pre>';
-  // print_r($jobs);
-  // echo '</pre>';
+  foreach ($params as $index => $param) {
+    $stmt->bindValue($index + 1, $param, is_int($param) ? PDO::PARAM_INT : PDO::PARAM_STR);
+  }
+  $stmt->execute();
+  $jobs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -119,8 +152,8 @@
             </a>
           </div>
             <ul class="links list-unstyled m-0 d-none d-lg-flex">
-            <li><a class="active" href="./index.php">Home</a></li>
-            <li><a href="./alljobs.php">All Jobs</a></li>
+            <li><a href="./index.php">Home</a></li>
+            <li><a  class="active" href="./alljobs.php">All Jobs</a></li>
             <li><a href="./company.php ">Companies</a></li>
             <li><a href="./candiates.php">People</a></li>
             <li><a href="./suggestions.php">Suggestions</a></li>
@@ -128,7 +161,7 @@
         </div>
         <div class="d-flex align-items-center justify-content-between gap-3">
           <?php 
-            renderAuthButtons();
+            // renderAuthButtons();
           ?>
           <div class="dropdown d-block d-lg-none">
             <button class="btn" type="button" data-bs-toggle="dropdown">
@@ -136,11 +169,11 @@
             </button>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item"  href="./index.php"
+                <a class="dropdown-item" class="active" href="./index.html"
                   >Home</a
                 >
               </li>
-              <li><a class="dropdown-item active" href="./alljobs.php">All Jobs</a></li>
+              <li><a class="dropdown-item" href="./alljobs.php">All Jobs</a></li>
               <li>
                 <a class="dropdown-item" href="./company.php ">Companies</a>
               </li>
@@ -150,7 +183,7 @@
               </li>
               <!-- <li>
                 <?php 
-                 // renderAuthButtons();
+                 renderAuthButtons();
                 ?>
               </li> -->
             </ul>
@@ -231,25 +264,7 @@
         </div>
         <div class="body">
           <div class="content">
-            <?php
-              // $companyId = $_SESSION['company_id'];
-
-              if(empty($_GET)) {
-                $query = "SELECT jobs.*, companies.company_name, companies.logo_url
-                  FROM  jobs
-                  JOIN  companies ON jobs.company_id = companies.company_id
-                  WHERE  jobs.status = 'Open'
-                  ORDER BY jobs.posted_at DESC";
-                  $stmt = $conn->prepare($query);
-                  $stmt->execute( );
-                  $jobs = $stmt->fetchAll();
-              }
-
-
-                // echo '<pre>';
-                // print_r($jobs);
-                // echo '</pre>';
-            ?>
+           
             <div class="jobs">
               <?php if (count($jobs) == 0) echo 'No Jobs Added Recently!';?>
               <?php foreach ($jobs as $job): ?>
@@ -304,19 +319,26 @@
         </div>
       </div>
       <div class="switchPage">
-        <i class="fa-solid fa-angle-left" id="prevBtn"></i>
+        <!-- <i class="fa-solid fa-angle-left" id="prevBtn"></i> -->
+         <?php if ($page > 1): ?>
+          <a href="?page=<?= $page - 1 ?>" class="prevBtn">
+            <i class="fa-solid fa-angle-left"></i>
+          </a>
+        <?php endif; ?>
         <div class="pages">
-        <button class="active">1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>...</button>
+        <!-- <button class="active">1</button> -->
+        <?php for ($i = 1; $i <= min($totalPages, 8); $i++): ?>
+          <a href="?page=<?= $i ?>" class="<?= ($i == $page ? 'active' : '') ?>">
+            <?= $i ?>
+          </a>
+        <?php endfor; ?>
         </div>
-        <i class="fa-solid fa-angle-right" id="nextBtn"></i>
+        <!-- <i class="fa-solid fa-angle-right" id="nextBtn"></i> -->
+        <?php if ($page < $totalPages): ?>
+          <a href="?page=<?= $page + 1 ?>" class="nextBtn">
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        <?php endif; ?>
       </div>
     </div>
        <footer>

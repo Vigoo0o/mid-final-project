@@ -20,6 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gender = $_POST['gender'] ?? null;
     $dob = $_POST['date_of_birth'] ?? null;
 
+    // معالجة المهارات
+    $skillsInput = $_POST['skills'] ?? '';
+    $skillsArray = array_filter(array_map('trim', explode(',', $skillsInput)));
+
     // صورة البروفايل
     $profilePicUrl = null;
     if (!empty($_FILES['profile_picture']['name'])) {
@@ -42,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $resumeUrl = substr($resumeUploadPath, 1);
     }
 
-    // بناء SQL
+    // تحديث بيانات المستخدم
     $sql = "UPDATE users SET full_name = ?, job_title = ?, email = ?, address = ?, about = ?, linkedin_url = ?, github_url = ?, gender = ?, date_of_birth = ?";
     $params = [$fullName, $title, $email, $address, $about, $linkedin, $github, $gender, $dob];
 
@@ -59,35 +63,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql .= " WHERE user_id = ?";
     $params[] = $_SESSION['user_id'];
 
-    // طباعة للتصحيح
-    echo '<pre>';
-    echo "SQL: $sql\n";
-    echo "User ID: " . $_SESSION['user_id'] . "\n";
-    print_r($params);
-    echo '</pre>';
-
     try {
-        // تحضير الـ statement
+        // تنفيذ التحديث
         $stmt = $conn->prepare($sql);
         if (!$stmt) {
             die("Error preparing statement: " . implode(", ", $conn->errorInfo()));
-        } else {
-            echo  'conn Done Good';
         }
-
-        // تنفيذ الـ query
         $stmt->execute($params);
 
-        // التحقق من نجاح التحديث
-        if ($stmt->rowCount() > 0) {
-            echo "Profile updated successfully.";
-            header("Location: ../profile.php?status=updated");
-            exit;
-        } else {
-            echo "No changes made or record not found for user_id: " . $_SESSION['user_id'];
+        // تحديث المهارات
+        $deleteStmt = $conn->prepare("DELETE FROM user_skills WHERE user_id = ?");
+        $deleteStmt->execute([$_SESSION['user_id']]);
+
+        foreach ($skillsArray as $skillName) {
+            $selectSkill = $conn->prepare("SELECT id FROM skills WHERE name = ?");
+            $selectSkill->execute([$skillName]);
+            $skill = $selectSkill->fetch(PDO::FETCH_ASSOC);
+
+            if ($skill) {
+                $skillId = $skill['id'];
+            } else {
+                $insertSkill = $conn->prepare("INSERT INTO skills (name) VALUES (?)");
+                $insertSkill->execute([$skillName]);
+                $skillId = $conn->lastInsertId();
+            }
+
+            $insertUserSkill = $conn->prepare("INSERT INTO user_skills (user_id, skill_id) VALUES (?, ?)");
+            $insertUserSkill->execute([$_SESSION['user_id'], $skillId]);
         }
+
+        // ✅ معالجة بيانات التعليم
+        $educations = $_POST['education'] ?? [];
+
+        foreach ($educations as $edu) {
+            $eduId = $edu['id'] ?? null;
+            $university = $edu['university_name'] ?? '';
+            $degree = $edu['degree'] ?? '';
+            $field = $edu['field_of_study'] ?? '';
+            $startDate = $edu['start_date'] ?? null;
+            $endDate = $edu['end_date'] ?? null;
+            $isCurrent = isset($edu['is_current']) ? 1 : 0;
+
+            if ($eduId) {
+                // تحديث سجل موجود
+                $updateEdu = $conn->prepare("UPDATE educations SET university_name = ?, degree = ?, field_of_study = ?, start_date = ?, end_date = ?, is_current = ? WHERE id = ? AND user_id = ?");
+                $updateEdu->execute([$university, $degree, $field, $startDate, $endDate, $isCurrent, $eduId, $_SESSION['user_id']]);
+            } else {
+                // إضافة سجل جديد
+                $insertEdu = $conn->prepare("INSERT INTO educations (user_id, university_name, degree, field_of_study, start_date, end_date, is_current) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                $insertEdu->execute([$_SESSION['user_id'], $university, $degree, $field, $startDate, $endDate, $isCurrent]);
+            }
+        }
+
+        // إعادة التوجيه عند النجاح
+        header("Location: ../profile.php?status=updated");
+        exit;
+
     } catch (PDOException $e) {
-        die("Error executing query: " . $e->getMessage());
+        die("Error: " . $e->getMessage());
     }
 } else {
     echo "Invalid request.";

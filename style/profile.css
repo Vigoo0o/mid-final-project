@@ -126,9 +126,9 @@
 .skills-section {
   font-size: 14px;
   display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* text-align: center; */
+  /* justify-content: center; */
 }
 .skills-section p {
   background: rgba(243, 244, 246, 1);

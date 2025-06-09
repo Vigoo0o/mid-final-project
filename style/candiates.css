@@ -4,6 +4,7 @@
 
 .result .image img {
   width: 100px;
+  border-radius: 50%;
 }
 
 .result .info {

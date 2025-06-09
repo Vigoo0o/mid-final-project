@@ -1,4 +1,5 @@
 <?php
+  include './db.php';
   include './error.php';
   include 'auth.php';
   include './components.php';
@@ -48,6 +49,104 @@
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./style/profile.css" />
     <style>
+      .skills-section{
+    /* padding: 20px ;
+    width: 800PX;
+    height: 390px;
+    margin-bottom: 40px;
+    border: 1px solid#ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; */
+    DISPLAY: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+}
+.skills-title h1{
+    font-size: 25px; 
+    color: #171A1FFF; 
+
+}
+.fa-regular.fa-circle-check{
+    color:rgba(14, 168, 155, 1);
+}
+.skills-header {
+    margin-left: 30px;
+}
+.skills-header h3{
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px;
+}
+.All{
+    color: white;
+    background-color: rgba(14, 168, 155, 1);
+    border-radius: 18px;
+}
+.skill{
+    padding: 20px ;
+}
+.experience{
+    background-color:rgb(224, 211, 237);
+    color: rgb(98, 43, 150);
+    border-radius: 30px;
+    padding: 5px;
+    margin-left: 20px;
+}
+.endorsements{
+    background-color: #f8eee2;
+    color: #d87f02;
+    border-radius: 30px;
+    padding: 5px;
+    margin-left: 20px;
+}
+/* Education Section */
+.education-section{
+    background-color: #fff;
+    margin: auto;
+    padding: 30px ;
+    height: 230px;
+    width: 800PX;
+    border: 1px solid#ddd;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.education-title{
+    height: 100%;
+}
+.education-title h1{
+    color: rgba(23, 26, 31, 1);
+    font-size: 30px;
+}
+.education-details{
+    display:flex;
+    position: relative;
+    right: 110px;
+    top: 10px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+}
+.education-details h3{
+    font-family: Lato; 
+    font-size: 16px; 
+    color: #171A1FFF;
+}
+.education-details span{
+    color: rgba(144, 149, 160, 1);
+}
+
+.education-image{
+    margin: 20px;
+    width: 70px;
+    height: 70px;
+}
     </style>
   </s>
   <body>
@@ -211,8 +310,109 @@
                 </div>
               <?php endforeach; ?>
             </section>
+
+            <!-- Skills Section -->
+<?php
+// session_start();
+
+if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+    die("User not logged in.");
+}
+
+$userId = $_SESSION['user_id'];
+
+// جلب المهارات المرتبطة بالمستخدم
+$stmt = $conn->prepare("
+    SELECT s.name 
+    FROM skills s
+    JOIN user_skills us ON s.id = us.skill_id
+    WHERE us.user_id = ?
+");
+$stmt->execute([$userId]);
+$skills = $stmt->fetchAll(PDO::FETCH_COLUMN);
+?>
+
+<section class="skills-section">
+    <div class="skills-header">
+        <div class="skills-title">
+            <h1>Skills</h1>
         </div>
+    </div>
+
+    <?php foreach ($skills as $skillName): ?>
+        <div class="skill">
+            <span class="skill"><i class="fa-regular fa-circle-check"></i> <?= htmlspecialchars($skillName) ?></span>
+        </div>
+    <?php endforeach; ?>
+</section>
+
+<!-- Education Section -->
+<!-- <div class="education-section">
+    <div class="education-title">
+      <h1>Education</h1>
       </div>
+      <div class="education-details">
+          <img class="education-image" src="/images/Image 44.png" alt="#" class="education-image">
+        <div class="details">
+          <h3 class="education-place">Arena Multimedia, New York</h3>
+          <span class="education-degree"><i class="fa-solid fa-layer-group"></i> Advanced Diploma in Multimedia</span>
+          <br>
+          <span class="education-duration"><i class="fa-solid fa-calendar"></i> 2014-2017</span>
+        </div>
+    </div>
+</div> -->
+
+<!-- <?php
+$user_id = 5; // استبدله بالـ user_id الديناميكي
+
+try {
+    $stmt = $conn->prepare("SELECT * FROM educations WHERE user_id = :user_id LIMIT 1");
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $education = $stmt->fetch(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+    echo "Database error: " . $e->getMessage();
+}
+?>
+
+<?php if ($education): ?>
+<div class="education-section">
+    <div class="education-title">
+        <h1>Education</h1>
+    </div>
+    <div class="education-details">
+        <img class="education-image" src="/images/Image 44.png" alt="education-image">
+        <div class="details">
+            <h3 class="education-place"><?= htmlspecialchars($education['university_name']) ?></h3>
+            <span class="education-degree">
+                <i class="fa-solid fa-layer-group"></i>
+                <?= htmlspecialchars($education['degree']) ?>
+                <?= $education['field_of_study'] ? ' - ' . htmlspecialchars($education['field_of_study']) : '' ?>
+            </span>   
+            <br>
+            <span class="education-duration">
+                <i class="fa-solid fa-calendar"></i>
+                <?= date('Y', strtotime($education['start_date'])) ?> -
+                <?= $education['is_current'] ? 'Present' : date('Y', strtotime($education['end_date'])) ?>
+            </span>
+        </div>
+    </div>
+</div>
+<?php else: ?>
+  <section>
+    <div class="education-title">
+        <h1>Education</h1>
+    </div>
+    <p style="color:gray;">No education data found.</p>
+  </section>
+<?php endif; ?>
+
+
+        </div>
+      </div> -->
+    </div>
     </div>
     <?php if (!isset($_GET['user_id'])) { ?>
     <a href="./userDashboard.php" class="btn btn-primary" style="position: fixed;bottom: 20px;right: 20px;">Dashboard</a>

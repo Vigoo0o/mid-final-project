@@ -78,7 +78,7 @@
           </ul>
         </div>
         <?php 
-          renderAuthButtons();
+          // renderAuthButtons();
         ?>
         <div class="dropdown d-block d-lg-none">
           <button class="btn" type="button" data-bs-toggle="dropdown">
