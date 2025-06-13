@@ -14,7 +14,7 @@
   $cover_letter = $_POST['cover_letter'];
 
 
-  // تأكد إن المستخدم مش مقدم قبل كده
+  // Check If User Exist!
   $stmt = $conn->prepare("SELECT * FROM applications WHERE user_id = ? AND job_id = ?");
   $stmt->execute([$user_id, $job_id]);
   $exists = $stmt->fetch();
@@ -24,7 +24,7 @@
     exit;
   }
 
-  // إدخال الطلب الجديد
+  // Add New User
   $stmt = $conn->prepare("INSERT INTO applications (user_id, job_id, status, applied_at, cover_letter) VALUES (?, ?, 'Pending', NOW(), ?)");
   $stmt->execute([$user_id, $job_id, $cover_letter]);
 

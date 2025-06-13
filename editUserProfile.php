@@ -144,59 +144,6 @@
               </div>
             </section>
 
-            <!-- <section class="education-section"> -->
-            <!-- <section class="education-section mb-4">
-  <h3>Education</h3>
-  <?php
-    $stmt = $conn->prepare("SELECT * FROM educations WHERE user_id = ?");
-    $stmt->execute([$user_id]);
-    $educations = $stmt->fetchAll();
-
-    if (count($educations) === 0) {
-      echo "<p>No education records added yet.</p>";
-    }
-
-    foreach ($educations as $index => $edu): ?>
-      <div class="education-entry border rounded p-3 mb-3">
-        <input type="hidden" name="education[<?= $index ?>][id]" value="<?= $edu['id'] ?>">
-
-        <div class="form-group">
-          <label>University Name</label>
-          <input type="text" class="form-control" name="education[<?= $index ?>][university_name]" value="<?= htmlspecialchars($edu['university_name']) ?>" required>
-        </div>
-
-        <div class="form-group">
-          <label>Degree</label>
-          <input type="text" class="form-control" name="education[<?= $index ?>][degree]" value="<?= htmlspecialchars($edu['degree']) ?>" required>
-        </div>
-
-        <div class="form-group">
-          <label>Field of Study</label>
-          <input type="text" class="form-control" name="education[<?= $index ?>][field_of_study]" value="<?= htmlspecialchars($edu['field_of_study']) ?>">
-        </div>
-
-        <div class="form-group">
-          <label>Start Date</label>
-          <input type="date" class="form-control" name="education[<?= $index ?>][start_date]" value="<?= htmlspecialchars($edu['start_date']) ?>" required>
-        </div>
-
-        <div class="form-group">
-          <label>End Date</label>
-          <input type="date" class="form-control" name="education[<?= $index ?>][end_date]" value="<?= htmlspecialchars($edu['end_date']) ?>">
-        </div>
-
-        <div class="form-check mt-2">
-          <input class="form-check-input" type="checkbox" name="education[<?= $index ?>][is_current]" value="1" <?= $edu['is_current'] ? 'checked' : '' ?>>
-          <label class="form-check-label">I currently study here</label>
-        </div>
-      </div>
-  <?php endforeach; ?>
-</section> -->
-
-  
-  <!-- Add a blank form for new entry if needed -->
-</section>
-
 
             <!-- ACTIONS -->
             <div class="actions mt-4">

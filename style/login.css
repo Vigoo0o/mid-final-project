@@ -21,14 +21,12 @@ form input.emailInput {
 
 form small {
   float: left;
-  /* display: block; */
   width: 100%;
   text-align: start;
   margin-bottom: 15px;
 }
 
 form label {
-  /* text-align: ; */
   float: left;
 }
 

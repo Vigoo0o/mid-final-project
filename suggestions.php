@@ -150,15 +150,6 @@
             ></textarea>
             <input type="submit" value="Send Suggestions" />
           </form>
-          <!-- <div class="info">
-            <h4>Get In Touch</h4>
-            <span class="phone">+00 123.456.789</span>
-            <span class="phone">+00 123.456.789</span>
-            <h4>Where We Are</h4>
-            <address>
-              Awesome Address 17<br />New York, NYC<br />123-4567-890<br />USA
-            </address>
-          </div> -->
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@
     die("No job ID provided.");
   }
 
-  // تأكد إن الشركة دي هي صاحبة الوظيفة
+  // Valid Company
   $sql = "SELECT * FROM jobs WHERE job_id = :jobId AND company_id = :companyId";
   $stmt = $conn->prepare($sql);
   $stmt->execute([
@@ -28,7 +28,7 @@
     die("Unauthorized.");
   }
 
-  // تحديث حالة الوظيفة
+  // Status Update
   $update = $conn->prepare("UPDATE jobs SET status = 'Closed' WHERE job_id = :jobId");
   $update->execute([':jobId' => $jobId]);
 

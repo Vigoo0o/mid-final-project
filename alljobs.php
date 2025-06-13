@@ -319,21 +319,18 @@
         </div>
       </div>
       <div class="switchPage">
-        <!-- <i class="fa-solid fa-angle-left" id="prevBtn"></i> -->
          <?php if ($page > 1): ?>
           <a href="?page=<?= $page - 1 ?>" class="prevBtn">
             <i class="fa-solid fa-angle-left"></i>
           </a>
         <?php endif; ?>
         <div class="pages">
-        <!-- <button class="active">1</button> -->
         <?php for ($i = 1; $i <= min($totalPages, 8); $i++): ?>
           <a href="?page=<?= $i ?>" class="<?= ($i == $page ? 'active' : '') ?>">
             <?= $i ?>
           </a>
         <?php endfor; ?>
         </div>
-        <!-- <i class="fa-solid fa-angle-right" id="nextBtn"></i> -->
         <?php if ($page < $totalPages): ?>
           <a href="?page=<?= $page + 1 ?>" class="nextBtn">
             <i class="fa-solid fa-angle-right"></i>

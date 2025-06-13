@@ -44,35 +44,11 @@
               <img class="logo" src="./images/logo/logo.png" alt="logo" />
             </a>
           </div>
-          <!-- <ul class="links list-unstyled d-flex m-0">
-            <li><a class="active" href="./index.html">Home</a></li>
-            <li><a href="./alljobs.html">All Jobs</a></li>
-            <li><a href="./company.html ">Companies</a></li>
-            <li><a href="./candiates.html">People</a></li>
-            <li><a href="">Career Advices</a></li>
-          </ul> -->
         </div>
-        <!-- <div class="icons d-flex align-items-center justify-content-between">
-          <a class="notification-icon" href="./notifications.html">
-            <i class="fa-regular fa-bell"></i>
-          </a>
-          <a
-            class="profile-icon d-flex justify-content-between align-items-center"
-            href="./profile.html"
-          >
-            <img
-              class="profile-image"
-              src="./images/profile-image.png"
-              alt=""
-            />
-            <i class="fa-solid fa-chevron-down"></i>
-          </a>
-        </div> -->
       </div>
     </nav>
     <form class="login" method="POST" action="./handlers/loginHandeler.php" >
       <h2>Login</h2>
-      <!-- <img class="logo" src="./images/logo.png" alt="logo" /> -->
 
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -85,9 +61,7 @@
           style="margin-bottom: 15px"
           name="email"
         />
-        <!-- <small id="emailHelp" class="form-text text-muted"
-          >We'll never share your email with anyone else.</small
-        > -->
+
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>

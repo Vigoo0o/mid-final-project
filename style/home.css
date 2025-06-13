@@ -121,9 +121,6 @@ ul {
   padding-bottom: var(--main-section-bottom-padding);
 }
 
-.jobExplore .jobSearchForm {
-}
-
 @media (max-width: 678px) {
   .jobExplore .jobSearchForm input[type="search"] {
     width: 250px;

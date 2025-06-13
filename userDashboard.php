@@ -3,19 +3,8 @@ session_start();
 require_once './db.php';
 require_once './error.php';
 
-// تحقق من تسجيل الدخول
-// if (!isset($_SESSION['user_id'])) {
-//   header('Location: login.php');
-//   exit;
-// }
-
-// echo '<pre>';
-// print_r($_SESSION);
-// echo '</pre>';
-
 $userId = $_SESSION['user_id'];
 
-// جلب طلبات المستخدم
 $sql = "
   SELECT 
     a.application_id, a.status, a.applied_at, 

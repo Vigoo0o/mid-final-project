@@ -50,18 +50,9 @@
     <link rel="stylesheet" href="./style/profile.css" />
     <style>
       .skills-section{
-    /* padding: 20px ;
-    width: 800PX;
-    height: 390px;
-    margin-bottom: 40px;
-    border: 1px solid#ddd;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column; */
+
     DISPLAY: flex;
     flex-direction: column;
-    /* gap: 20px; */
 }
 .skills-title h1{
     font-size: 25px; 
@@ -248,18 +239,13 @@
             <?php if (!empty($user['resume_url'])): ?>
               <a href="<?= htmlspecialchars($user['resume_url']) ?>" target="_blank">
                 <?= basename($user['resume_url']) ?>
-                <!-- <span><i class="fa-regular fa-copy"></i></span> -->
               </a>
             <?php else: ?>
               <a href="/edit-profile.php" title="Upload your CV">
                 No CV uploaded
-                <!-- <span><i class="fa-solid fa-upload"></i></span> -->
               </a>
             <?php endif; ?>
           </div>
-            <!-- <div class="edit-profile">
-              <a href="./editUserProfile.php"><i class="fa-solid fa-pen"></i> Edit Profile</a>
-            </div> -->
             <?php 
             if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $user['user_id']) {
               echo '<div class="edit-profile"><a href="./editUserProfile.php"><i class="fa-solid fa-pen"></i> Edit Profile</a></div>';
@@ -306,14 +292,12 @@
                   </span>
           
                   <p><?= safe($exp['description']) ?></p>
-                  <!-- <a href="#" class="see-more"> see more</a> -->
                 </div>
               <?php endforeach; ?>
             </section>
 
             <!-- Skills Section -->
 <?php
-// session_start();
 
 if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
     die("User not logged in.");
@@ -346,72 +330,6 @@ $skills = $stmt->fetchAll(PDO::FETCH_COLUMN);
     <?php endforeach; ?>
 </section>
 
-<!-- Education Section -->
-<!-- <div class="education-section">
-    <div class="education-title">
-      <h1>Education</h1>
-      </div>
-      <div class="education-details">
-          <img class="education-image" src="/images/Image 44.png" alt="#" class="education-image">
-        <div class="details">
-          <h3 class="education-place">Arena Multimedia, New York</h3>
-          <span class="education-degree"><i class="fa-solid fa-layer-group"></i> Advanced Diploma in Multimedia</span>
-          <br>
-          <span class="education-duration"><i class="fa-solid fa-calendar"></i> 2014-2017</span>
-        </div>
-    </div>
-</div> -->
-
-<!-- <?php
-$user_id = 5; // استبدله بالـ user_id الديناميكي
-
-try {
-    $stmt = $conn->prepare("SELECT * FROM educations WHERE user_id = :user_id LIMIT 1");
-    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-    $stmt->execute();
-
-    $education = $stmt->fetch(PDO::FETCH_ASSOC);
-
-} catch (PDOException $e) {
-    echo "Database error: " . $e->getMessage();
-}
-?>
-
-<?php if ($education): ?>
-<div class="education-section">
-    <div class="education-title">
-        <h1>Education</h1>
-    </div>
-    <div class="education-details">
-        <img class="education-image" src="/images/Image 44.png" alt="education-image">
-        <div class="details">
-            <h3 class="education-place"><?= htmlspecialchars($education['university_name']) ?></h3>
-            <span class="education-degree">
-                <i class="fa-solid fa-layer-group"></i>
-                <?= htmlspecialchars($education['degree']) ?>
-                <?= $education['field_of_study'] ? ' - ' . htmlspecialchars($education['field_of_study']) : '' ?>
-            </span>   
-            <br>
-            <span class="education-duration">
-                <i class="fa-solid fa-calendar"></i>
-                <?= date('Y', strtotime($education['start_date'])) ?> -
-                <?= $education['is_current'] ? 'Present' : date('Y', strtotime($education['end_date'])) ?>
-            </span>
-        </div>
-    </div>
-</div>
-<?php else: ?>
-  <section>
-    <div class="education-title">
-        <h1>Education</h1>
-    </div>
-    <p style="color:gray;">No education data found.</p>
-  </section>
-<?php endif; ?>
-
-
-        </div>
-      </div> -->
     </div>
     </div>
     <?php if (!isset($_GET['user_id'])) { ?>

@@ -44,7 +44,6 @@
       method="POST"
     >
       <h2>Create Account</h2>
-      <!-- <img class="logo" src="./images/logo.png" alt="logo" /> -->
 
       <div class="row">
         <div class="col">

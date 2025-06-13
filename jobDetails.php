@@ -71,10 +71,6 @@
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./style/candiates.css" />
     <style>
-      /* .content div section {
-        width: 100%;
-      } */
-
       .details .icon {
         margin-right: 15px;
       }
@@ -91,7 +87,6 @@
             <div class="postJobTag">
               <ul>
                 <a href=""> <li>Company Info</li> </a>
-                <!-- <a href=""> <li>Company info</li> </a> -->
                 <a href=""><li>Job Description</li>
                 <a href=""><li>Job Requerment</li>
                 </a>
@@ -129,7 +124,7 @@
 
                   <div class="head m-0">
                     <div class="image">
-                      <img src="./images/companyLogo3.png" alt="" /> <!-- هنا ممكن تحط اللوجو من اللوجو_url لو حبيت -->
+                      <img src="./images/companyLogo3.png" alt="" />
                     </div>
                     <div class="jobDetails">
                       <div class="jobTitle"><span class="fw-bold" style="font-size: 15px;">Job Title:</span> <?= htmlspecialchars($job['title']) ?></div>

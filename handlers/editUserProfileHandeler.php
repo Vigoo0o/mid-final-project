@@ -4,7 +4,7 @@ include '../db.php';
 
 session_start();
 
-// التحقق من تسجيل الدخول
+// Login Check 
 if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
     die("User not logged in.");
 }
@@ -20,11 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gender = $_POST['gender'] ?? null;
     $dob = $_POST['date_of_birth'] ?? null;
 
-    // معالجة المهارات
+    // Handel Skills
     $skillsInput = $_POST['skills'] ?? '';
     $skillsArray = array_filter(array_map('trim', explode(',', $skillsInput)));
 
-    // صورة البروفايل
+    // Profile Pic
     $profilePicUrl = null;
     if (!empty($_FILES['profile_picture']['name'])) {
         $fileName = uniqid() . '_' . $_FILES['profile_picture']['name'];
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $profilePicUrl = substr($uploadPath, 1);
     }
 
-    // السيرة الذاتية
+    // CV
     $resumeUrl = null;
     if (!empty($_FILES['resume']['name'])) {
         $resumeName = uniqid() . '_' . $_FILES['resume']['name'];
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $resumeUrl = substr($resumeUploadPath, 1);
     }
 
-    // تحديث بيانات المستخدم
+    // Update User Date
     $sql = "UPDATE users SET full_name = ?, job_title = ?, email = ?, address = ?, about = ?, linkedin_url = ?, github_url = ?, gender = ?, date_of_birth = ?";
     $params = [$fullName, $title, $email, $address, $about, $linkedin, $github, $gender, $dob];
 
@@ -64,14 +64,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $params[] = $_SESSION['user_id'];
 
     try {
-        // تنفيذ التحديث
+        // Upgrade
         $stmt = $conn->prepare($sql);
         if (!$stmt) {
             die("Error preparing statement: " . implode(", ", $conn->errorInfo()));
         }
         $stmt->execute($params);
 
-        // تحديث المهارات
+        //  Update Skills
         $deleteStmt = $conn->prepare("DELETE FROM user_skills WHERE user_id = ?");
         $deleteStmt->execute([$_SESSION['user_id']]);
 
@@ -92,30 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $insertUserSkill->execute([$_SESSION['user_id'], $skillId]);
         }
 
-        // ✅ معالجة بيانات التعليم
-        $educations = $_POST['education'] ?? [];
-
-        foreach ($educations as $edu) {
-            $eduId = $edu['id'] ?? null;
-            $university = $edu['university_name'] ?? '';
-            $degree = $edu['degree'] ?? '';
-            $field = $edu['field_of_study'] ?? '';
-            $startDate = $edu['start_date'] ?? null;
-            $endDate = $edu['end_date'] ?? null;
-            $isCurrent = isset($edu['is_current']) ? 1 : 0;
-
-            if ($eduId) {
-                // تحديث سجل موجود
-                $updateEdu = $conn->prepare("UPDATE educations SET university_name = ?, degree = ?, field_of_study = ?, start_date = ?, end_date = ?, is_current = ? WHERE id = ? AND user_id = ?");
-                $updateEdu->execute([$university, $degree, $field, $startDate, $endDate, $isCurrent, $eduId, $_SESSION['user_id']]);
-            } else {
-                // إضافة سجل جديد
-                $insertEdu = $conn->prepare("INSERT INTO educations (user_id, university_name, degree, field_of_study, start_date, end_date, is_current) VALUES (?, ?, ?, ?, ?, ?, ?)");
-                $insertEdu->execute([$_SESSION['user_id'], $university, $degree, $field, $startDate, $endDate, $isCurrent]);
-            }
-        }
-
-        // إعادة التوجيه عند النجاح
+        // Done
         header("Location: ../profile.php?status=updated");
         exit;
 

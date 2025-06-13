@@ -161,10 +161,6 @@
           Explore More
           <div class="primaryWord">jobs</div>
         </div>
-        <!-- <form class="jobSearchForm text-center" action="">
-          <input class="border-0" type="search" name="jobSearch" id="" />
-          <button class="border-0" type="button">Search</button>
-        </form> -->
         <?php 
           $colors = [
             "#ecfdfc",

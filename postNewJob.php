@@ -1,7 +1,6 @@
 <?php
   include 'auth.php';
   include 'db.php';
-  // protectPage('company');
 ?>
 
 <!DOCTYPE html>
@@ -28,16 +27,12 @@
       <div class="container">
         <div class="head d-flex align-items-center justify-content-between">
           <h2>Post a new job</h2>
-          <!-- <button class="btn btn-primary">
-            <i class="fa-solid fa-eye"></i><span>Preview</span>
-          </button> -->
         </div>
         <div class="content d-flex justify-content-between">
           <div class="sidebar">
             <div class="postJobTag">
               <ul>
                 <a href=""> <li>Job info</li> </a>
-                <!-- <a href=""> <li>Company info</li> </a> -->
                 <a href=""><li>Receive Application</li>
                 </a>
               </ul>
@@ -121,16 +116,6 @@
                     <option value="other">Other</option>
                     </select>
                   </div>
-                  <!-- <div class="col chckbox">
-                    <div>
-                      <input class="" type="checkbox" id="blankCheckbox" />
-                      <label for="">Net</label>
-                    </div>
-                    <div>
-                      <input class="" type="checkbox" id="blankCheckbox" />
-                      <label for="">Gross</label>
-                    </div>
-                  </div> -->
                 </div>
                 <div class="form-group">
                   <label for="jobDescription">Job Description</label>
@@ -202,7 +187,6 @@
               <button class="btn btn-primary" type="">
                 <a href="./companyProfile.php">Cancel</a>
               </button>
-              <!-- <button class="btn btn-primary" type="submit">Save</button> -->
               <button class="btn btn-primary" type="submit">
                 Save & publish
               </button>

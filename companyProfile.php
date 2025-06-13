@@ -216,7 +216,6 @@
           <div class="jop-contener">
             <h2>Recent job openings</h2>
             <?php
-              // $companyId = $_SESSION['company_id'];
 
               $query = "SELECT jobs.title, jobs.salary, companies.company_name, companies.logo_url, jobs.location, jobs.employment_type
                 FROM jobs
@@ -228,10 +227,6 @@
               $stmt = $conn->prepare($query);
               $stmt->execute([$companyId]);
               $jobs = $stmt->fetchAll();
-
-              // echo '<pre>';
-              // print_r($jobs);
-              // echo '</pre>';
             ?>
             <div class="jobs">
               <?php if (count($jobs) == 0) echo 'No Jobs Added Recently!';?>

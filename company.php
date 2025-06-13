@@ -4,7 +4,7 @@ include_once './db.php';
 include_once './error.php';
 include_once './components.php';
 
-$limit = 6; // عدد الشركات لكل صفحة
+$limit = 6;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page < 1) $page = 1;
 $offset = ($page - 1) * $limit;

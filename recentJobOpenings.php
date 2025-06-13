@@ -156,7 +156,7 @@
                 <div class="job">
                   <div class="head">
                     <div class="image">
-                      <img src="./images/companyLogo3.png" alt="" /> <!-- هنا ممكن تحط اللوجو من اللوجو_url لو حبيت -->
+                      <img src="./images/companyLogo3.png" alt="" /> 
                     </div>
                     <div class="jobDetails">
                       <div class="jobTitle"><?= htmlspecialchars($job['title']) ?></div>

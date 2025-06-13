@@ -8,7 +8,7 @@ include_once './userData.php';
 
 // protectPage('user'); // Uncomment if you want to restrict access
 
-$limit = 6; // عدد المستخدمين لكل صفحة
+$limit = 6; // Page Contennt Limet
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page < 1) $page = 1;
 $offset = ($page - 1) * $limit;

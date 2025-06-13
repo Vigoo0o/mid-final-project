@@ -66,7 +66,6 @@ body {
   display: flex;
 }
 .header {
-  /* width: 1176px; */
   height: fit-content;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -86,7 +85,6 @@ body {
   left: 0;
 }
 .inf-section {
-  /* margin-top: 80px; */
   padding-left: 50px;
   display: flex;
   gap: 90px;
@@ -112,7 +110,6 @@ body {
   font-size: 16px;
 }
 .links {
-  /* width: 300px; */
   align-items: center;
   justify-content: end;
   display: flex;
@@ -166,7 +163,6 @@ button.follow {
   height: 35px;
 }
 .about-contener {
-  /* width: 100%; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -174,15 +170,11 @@ button.follow {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.about-section {
-  /* width: 775px; */
-}
 .about-us {
   padding: 30px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background: rgba(255, 255, 255, 1);
-  /* margin-right: 30px; */
 }
 .about-us h2,
 .about-us h3 {
@@ -251,17 +243,12 @@ button.follow {
 }
 
 .job-list {
-  /* display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .job-card {
   background: #f8f9fa;
-  /* border-radius: 10px; */
   padding: 15px;
   width: 280px;
   display: flex;
@@ -572,7 +559,4 @@ footer {
   gap: 15px;
   text-align: center;
   bottom: 20px;
-}
-
-.buttons a {
 }

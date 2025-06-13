@@ -6,15 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
   $name = htmlspecialchars(trim($_POST['name']));
   $industry = htmlspecialchars(trim($_POST['industry']));
-  // $phone = htmlspecialchars(trim($_POST['contact']));
   $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
   $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
-
-  // echo '<br>' . $name . '<br>';
-  // echo '<br>' . $industry . '<br>';
-  // echo '<br>' . $contact . '<br>';
-  // echo '<br>' . $email . '<br>';
-  // echo '<br>' . $password . '<br>';
 
   // Check If The Company Is Already Registered
   $stmt = $conn->prepare("SELECT company_id FROM companies WHERE email = :email");

@@ -16,16 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $receiveApplicationMethod = $_POST['receiveApplicationMethod'];
     $applicationEmail = $_POST['appEmail'];
 
-    // echo $jobTitle . '<br>';
-    // echo $jobLocation . '<br>';
-    // echo $employmentType . '<br>';
-    // echo $salaryRange . '<br>';
-    // echo $jobDescription . '<br>';
-    // echo $jobRequerment . '<br>';
-    // echo $receiveApplicationMethod . '<br>';
-    // echo $applicationEmail . '<br>';
-
-
     $stmt = $conn->prepare("
         INSERT INTO jobs (
             title, 
